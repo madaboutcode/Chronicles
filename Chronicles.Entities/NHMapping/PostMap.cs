@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using FluentNHibernate.Mapping;
+
+namespace Chronicles.Entities.NHMapping
+{
+    public class PostMap : ClassMap<Post>
+    {
+        public PostMap()
+        {
+            Table("Posts");
+            Id(x => x.Id);
+            Map(x => x.Title);
+            Map(x => x.Body);
+            Map(x => x.UserId);
+            Map(x => x.CreateDate);
+            Map(x => x.ModifiedDate);
+            Map(x => x.ScheduledDate);
+            Map(x => x.Approved);
+            HasManyToMany(x => x.Tags)
+                .Cascade.All()
+                .LazyLoad()
+                .Table("PostsTags")
+                .ParentKeyColumn("PostId")
+                .ChildKeyColumn("TagId");
+        }
+    }
+}

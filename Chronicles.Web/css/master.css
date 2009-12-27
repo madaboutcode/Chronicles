@@ -1,0 +1,206 @@
+/*Reset*/
+BODY, DIV, DL, DT, DD, UL, OL, LI, H1, H2, H3, H4, H5, H6, PRE, FORM, FIELDSET, INPUT, TEXTAREA, P, BLOCKQUOTE, TH, TD
+{
+	margin: 0;
+	padding: 0;
+}
+TABLE
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+FIELDSET, IMG
+{
+	border: 0;
+}
+ADDRESS, CAPTION, CITE, CODE, DFN, EM, STRONG, TH, VAR
+{
+	font-style: normal;
+	font-weight: normal;
+}
+OL, UL
+{
+	list-style: none;
+}
+/*debug*/
+#footer
+{
+	background-color: #0F0;
+}
+/*total width: 965;
+positioning*/
+#container
+{
+	margin: 0 auto;
+	width: 965px;
+}
+#header
+{
+	width: 965px;
+	height: 215px;
+	position: relative;
+}
+#content
+{
+	width: 640px;
+	float: left;
+}
+#sidebar
+{
+	width: 265px;
+	float: left;
+}
+#footer
+{
+	width: 965px;
+	float: left;
+	clear: both;
+}
+#searchbox
+{
+	float: right;
+	top: 25px;
+	right: 0px;
+	position: relative;
+	margin-right: 35px;
+	width: 115px;
+}
+#searchbox INPUT
+{
+	width: 115px;
+	font: bold 1em "courier new", courier, "Andale Mono", monospace;
+	color: #656565;
+	letter-spacing: -0.6px;
+	text-align: center;
+}
+#subscribe
+{
+	top: 60px;
+	position: absolute;
+	right: 25px;
+	width: 41px;
+}
+#quicklinks A
+{
+	color: #3C7B9D;
+}
+#quicklinks
+{
+	top: 150px;
+	position: absolute;
+	font: bold 1em "courier new", courier, "Andale Mono", monospace;
+}
+#quicklinks LI
+{
+	float: left;
+	margin: 0 0 0 30px;
+}
+#content
+{
+	padding: 30px 30px 0;
+}
+#sidebar
+{
+	padding: 30px 0 0;
+}
+/*element styles*/
+BODY
+{
+	font: normal 1em Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+	background: #FBF9F7 url(../img/logo.jpg) no-repeat center top;
+}
+A
+{
+	color: #3C7B9D;
+	text-decoration: none;
+}
+A:hover
+{
+	text-decoration: underline;
+}
+DIV.entry
+{
+	clear: both;
+	padding-bottom: 30px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ABD1E6;
+}
+.entry H1
+{
+	font: bold 2em Garamond, "Hoefler Text", "Times New Roman", Times, serif;
+	color: #3C7B9D;
+}
+.entry A:hover H1
+{
+	text-decoration: underline;
+}
+.entry-body UL
+{
+	list-style-type: disc;
+	margin: 10px 0px 0px 10px;
+	padding-left: 40px;
+}
+.entry-body OL
+{
+	list-style-type: decimal;
+	margin: 10px 0px 0px 10px;
+	padding-left: 40px;
+}
+.entry-body BLOCKQUOTE
+{
+	background: url(../img/quote.jpg) no-repeat top left;
+	padding: 0px 10px 0 40px;
+	font-style: italic;
+	color: #468;
+}
+.entry-body
+{
+	line-height: 1.5em;
+	text-align: justify;
+}
+.entry-body H2
+{
+	font: bold 1.5em Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.entry-body H3
+{
+	font: bold 1.1em Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #74A3BD;
+}
+.entry-body P
+{
+	margin: 10px 0 15px;
+}
+.entry-body PRE CODE
+{
+	font: 1em Consolas, Monaco, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+	/*[empty]background-color:;*/
+}
+.entry-date
+{
+	float: right;
+}
+UL.post-tags
+{
+	list-style: none;
+	padding: 0px;
+}
+.post-tags LI
+{
+	float: left;
+	padding: 0 15px 0 25px;
+	font-weight: bold;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	background: url(../img/tag.png) no-repeat top left;
+}
+/*classes*/
+.transparent
+{
+	background: transparent;
+	border: none;
+}
+.invisible
+{
+	left: -1000px;
+}

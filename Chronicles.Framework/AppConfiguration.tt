@@ -1,0 +1,42 @@
+﻿<#@ template language="C#v3.5" debug="true" hostspecific="true" #>
+<#@ assembly name="System.Xml" #> 
+<#@ assembly name="System.Xml.Linq" #> 
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Linq" #>
+using System;
+
+namespace Chronicles.Framework
+{
+	public class AppConfiguration
+	{
+		private IAppConfigProvider configProvider;
+		public AppConfiguration(IAppConfigProvider provider)
+		{
+			configProvider = provider;
+		}
+		
+<#
+
+	XElement root = XElement.Load( Host.ResolvePath(@"..\Chronicles.Web\web.config"));
+
+        var el = (from x in root.Descendants()
+                  where x.Name == "appSettings"
+                  select x).FirstOrDefault();
+
+        foreach (var setting in el.Elements())
+        {
+            string key = setting.Attributes().Where(x => x.Name == "key").First().Value;
+#>
+		public string <#=key#>
+		{
+			get
+			{
+				return configProvider.GetConfig("<#= key #>");
+			}
+		}
+<#
+        }
+#>
+	}
+}
