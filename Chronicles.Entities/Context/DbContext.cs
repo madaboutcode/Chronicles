@@ -8,45 +8,47 @@ using Chronicles.Framework;
 
 namespace Chronicles.Entities.Context
 {
-    public class DbContext : NHibernateContext
+    public class DbContext
     {
+        public ISession Session { get; set; }
+
         DataProviderSessionFactory sessionFactory;
         public DbContext(DataProviderSessionFactory sessionFactory)
-            : base(sessionFactory.GetSession())
         {
             this.sessionFactory = sessionFactory;
+            Session = sessionFactory.GetSession();
         }
 
         #region Entity Aliases
-        public IOrderedQueryable<Post> Posts
+        public IQueryable<Post> Posts
         {
             get
             {
-                return Session.Linq<Post>();
+                return Session.Query<Post>();
             }
         }
 
-        public IOrderedQueryable<Tag> Tags
+        public IQueryable<Tag> Tags
         {
             get
             {
-                return Session.Linq<Tag>();
+                return Session.Query<Tag>();
             }
         }
 
-        public IOrderedQueryable<Comment> Comments
+        public IQueryable<Comment> Comments
         {
             get
             {
-                return Session.Linq<Comment>();
+                return Session.Query<Comment>();
             }
         }
 
-        public IOrderedQueryable<User> Users
+        public IQueryable<User> Users
         {
             get
             {
-                return Session.Linq<User>();
+                return Session.Query<User>();
             }
         }
         #endregion Entity Aliases

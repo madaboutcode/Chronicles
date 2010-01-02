@@ -58,6 +58,10 @@ namespace Chronicles.Services
             {
                 if (user.Name != existingUser.Name)
                     existingUser.Name = user.Name;
+
+                if (user.WebSite != existingUser.WebSite)
+                    existingUser.WebSite = user.WebSite;
+
                 return existingUser;
             }
         }

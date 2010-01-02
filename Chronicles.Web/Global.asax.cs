@@ -23,7 +23,7 @@ namespace Chronicles.Web
             routes.MapRoute(
                 "posts"
                 , "post/{year}/{month}/{day}/{id}/{title}"
-                , new { controller = MVC.Archives.Name, action = MVC.Archives.Actions.ViewPost, title = "" }
+                , new { controller = MVC.Posts.Name, action = MVC.Posts.Actions.ViewPost, title = "" }
                 , new { year = @"\d{4}", month = @"\d{1,2}", day = @"\d{1,2}", id = @"\d+" }
             );
 
@@ -31,7 +31,7 @@ namespace Chronicles.Web
             routes.MapRoute(
                 "postbytags"
                 , "post/tagged/{tagname}/{pagenumber}"
-                , new { controller = MVC.Archives.Name, action = MVC.Archives.Actions.ViewPostsByTag, pagenumber = 1 }
+                , new { controller = MVC.Posts.Name, action = MVC.Posts.Actions.ViewPostsByTag, pagenumber = 1 }
                 , new { pagenumber = @"\d+" }
             );
 

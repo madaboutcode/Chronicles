@@ -8,14 +8,15 @@ using Chronicles.Web.ViewModels;
 using Chronicles.Entities;
 using AutoMapper;
 using Chronicles.Framework;
+using log4net;
 
 namespace Chronicles.Web.Controllers
 {
-    public partial class HomeController : Controller
+    public partial class HomeController : BaseController
     {
         private PostServices postService;
 
-        public HomeController(PostServices postService, AppConfiguration config)
+        public HomeController(PostServices postService, AppConfiguration config,ILog logger):base(logger)
         {
             this.postService = postService;
         }

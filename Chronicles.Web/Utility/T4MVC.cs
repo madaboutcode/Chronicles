@@ -20,9 +20,9 @@ using T4MVC;
 
 [CompilerGenerated]
 public static class MVC {
-    public static Chronicles.Web.Controllers.ArchivesController Archives = new Chronicles.Web.Controllers.T4MVC_ArchivesController();
     public static Chronicles.Web.Controllers.CommentController Comment = new Chronicles.Web.Controllers.T4MVC_CommentController();
     public static Chronicles.Web.Controllers.HomeController Home = new Chronicles.Web.Controllers.T4MVC_HomeController();
+    public static Chronicles.Web.Controllers.PostsController Posts = new Chronicles.Web.Controllers.T4MVC_PostsController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 

@@ -10,6 +10,9 @@ using Chronicles.Framework;
 using AutoMapper;
 using Chronicles.Entities;
 using Chronicles.Web.ViewModels;
+using log4net.Core;
+using log4net;
+using StructureMap.Attributes;
 
 namespace Chronicles.Web.Utility
 {
@@ -33,7 +36,7 @@ namespace Chronicles.Web.Utility
                 .ForMember(x=>x.Summary, opt => opt.MapFrom(y=>y.Body));
 
             Mapper.CreateMap<Post, PostDetails>()
-                //.ForMember(x => x.Comments, opt => opt.Ignore())
+                .ForMember(x => x.EditedComment, opt => opt.Ignore())
                 .ForMember(x => x.PublishedDate, opt => opt.MapFrom(y => y.ScheduledDate));
 
             Mapper.CreateMap<Comment, CommentDetails>();
@@ -44,11 +47,22 @@ namespace Chronicles.Web.Utility
     {
         protected override void configure()
         {
-            ForRequestedType<IPostRepository>().TheDefaultIsConcreteType<PostRepository>();
-            ForRequestedType<ITagRepository>().TheDefaultIsConcreteType<TagRepository>();
-            ForRequestedType<IAppConfigProvider>().TheDefaultIsConcreteType<AppConfigProvider>();
-            ForRequestedType<ICommentRepository>().TheDefaultIsConcreteType<CommentRepository>();
-            ForRequestedType<IUserRepository>().TheDefaultIsConcreteType<UserRepository>();
+            ForRequestedType<IPostRepository>().TheDefaultIsConcreteType<PostRepository>().CacheBy(InstanceScope.Hybrid);
+            ForRequestedType<ITagRepository>().TheDefaultIsConcreteType<TagRepository>().CacheBy(InstanceScope.Hybrid);
+            ForRequestedType<IAppConfigProvider>().TheDefaultIsConcreteType<AppConfigProvider>().CacheBy(InstanceScope.Singleton);
+            ForRequestedType<ICommentRepository>().TheDefaultIsConcreteType<CommentRepository>().CacheBy(InstanceScope.Hybrid);
+            ForRequestedType<IUserRepository>().TheDefaultIsConcreteType<UserRepository>().CacheBy(InstanceScope.Hybrid);
+            ForRequestedType<ILog>()
+                .AlwaysUnique()
+                .TheDefault
+                .Is
+                .ConstructedBy((IContext context) =>
+                {
+                    if (context.ParentType == null)
+                        return LogManager.GetLogger(context.BuildStack.Current.ConcreteType);
+
+                    return LogManager.GetLogger(context.ParentType);
+                });
         }
     }
 }

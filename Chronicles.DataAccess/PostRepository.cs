@@ -64,8 +64,6 @@ namespace Chronicles.DataAccess
                     select post).FirstOrDefault<Post>();
         }
 
-        //TODO: make this logic work.. nhibernate limitation.. see [http://www.mail-archive.com/nhcdevs@googlegroups.com/msg00333.html]
-        /*
         public IList<Post> GetPostsByTag(string name, int pageSize, int pagenumber, out int totalRows)
         {
             var posts = from tag in DbContext.Tags
@@ -94,37 +92,6 @@ namespace Chronicles.DataAccess
                 totalRows = 0;
                 return new List<Post>();
             }
-        }*/
-
-        public IList<Post> GetPostsByTag(string tagname, int pageSize, int pagenumber, out int totalRows)
-        {
-            Tag tag = tagRepository.GetTagByName(tagname);
-
-            if (tag != null)
-            {
-                var posts = (from post in tag.Posts 
-                            where post.ScheduledDate <= DateTime.Now && post.Approved == true
-                            orderby post.ScheduledDate descending
-                            select post).ToList();
-
-                if (posts != null && posts.Count > 0)
-                {
-                    totalRows = posts.Count;
-
-                    IEnumerable<Post> postsForDisplay = posts.Take(pageSize);
-
-                    int pagePostStartIndex = (pagenumber - 1) * pageSize;
-
-                    if (pagePostStartIndex > 0)
-                    {
-                        postsForDisplay = postsForDisplay.Skip(pagePostStartIndex);
-                    }
-
-                    return postsForDisplay.ToList();
-                }
-            }
-            totalRows = 0;
-            return new List<Post>();
         }
 
     }
