@@ -7,6 +7,7 @@ using Chronicles.Services;
 using Chronicles.Web.ViewModels;
 using Chronicles.Entities;
 using AutoMapper;
+using Chronicles.Framework;
 
 namespace Chronicles.Web.Controllers
 {
@@ -14,7 +15,7 @@ namespace Chronicles.Web.Controllers
     {
         private PostServices postService;
 
-        public HomeController(PostServices postService)
+        public HomeController(PostServices postService, AppConfiguration config)
         {
             this.postService = postService;
         }
@@ -29,6 +30,5 @@ namespace Chronicles.Web.Controllers
 
             return View(postList);
         }
-
     }
 }

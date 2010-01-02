@@ -6,7 +6,7 @@ using FluentNHibernate.Mapping;
 
 namespace Chronicles.Entities.NHMapping
 {
-    public class PostMap : ClassMap<Post>
+    public class PostMap:ClassMap<Post>
     {
         public PostMap()
         {
@@ -19,6 +19,7 @@ namespace Chronicles.Entities.NHMapping
             Map(x => x.ModifiedDate);
             Map(x => x.ScheduledDate);
             Map(x => x.Approved);
+            HasMany(x => x.Comments).KeyColumn("PostId").Inverse();
             HasManyToMany(x => x.Tags)
                 .Cascade.All()
                 .LazyLoad()

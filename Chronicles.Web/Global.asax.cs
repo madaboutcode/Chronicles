@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Chronicles.Web.Utility;
+using Chronicles.Web.Controllers;
 
 namespace Chronicles.Web
 {
@@ -22,17 +23,29 @@ namespace Chronicles.Web
             routes.MapRoute(
                 "posts"
                 , "post/{year}/{month}/{day}/{id}/{title}"
-                , new { controller="Archives", action="ViewPost",title="" }
-                , new { year=@"\d{4}", month=@"\d{1,2}", day=@"\d{1,2}", id=@"\d+"}
+                , new { controller = MVC.Archives.Name, action = MVC.Archives.Actions.ViewPost, title = "" }
+                , new { year = @"\d{4}", month = @"\d{1,2}", day = @"\d{1,2}", id = @"\d+" }
             );
 
+            // /post/tagged/programming/page
+            routes.MapRoute(
+                "postbytags"
+                , "post/tagged/{tagname}/{pagenumber}"
+                , new { controller = MVC.Archives.Name, action = MVC.Archives.Actions.ViewPostsByTag, pagenumber = 1 }
+                , new { pagenumber = @"\d+" }
+            );
 
             routes.MapRoute(
                 "Default",                                              // Route name
                 "{controller}/{action}",                           // URL with parameters
-                new { controller = "Home", action = "Index" }  // Parameter defaults
+                new { controller = "Home", action = "Index" }  // Parameter defaults,
+                , new { controller = @"[a-zA-Z]*", action = @"[a-zA-Z]*" }
             );
+        }
 
+        public void RegisterModelBinders(ModelBinderDictionary binders) // Add this whole method
+        {
+            //binders.DefaultBinder = new DataAnnotationsModelBinder();
         }
 
         public static void RegisterControllerFactory()
@@ -46,6 +59,8 @@ namespace Chronicles.Web
 
             RegisterRoutes(RouteTable.Routes);
             //RouteDebug.RouteDebugger.RewriteRoutesForTesting(RouteTable.Routes);
+
+            RegisterModelBinders(ModelBinders.Binders);
 
             //Do all the bootstrapping
             Bootstrapper.Boot();

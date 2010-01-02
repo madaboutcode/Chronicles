@@ -31,6 +31,12 @@ namespace Chronicles.Web.Utility
             Mapper.CreateMap<Post, PostSummary>()
                 .ForMember(x=>x.PublishedDate, opt => opt.MapFrom(y=>y.ScheduledDate))
                 .ForMember(x=>x.Summary, opt => opt.MapFrom(y=>y.Body));
+
+            Mapper.CreateMap<Post, PostDetails>()
+                //.ForMember(x => x.Comments, opt => opt.Ignore())
+                .ForMember(x => x.PublishedDate, opt => opt.MapFrom(y => y.ScheduledDate));
+
+            Mapper.CreateMap<Comment, CommentDetails>();
         }
     }
 
@@ -41,6 +47,8 @@ namespace Chronicles.Web.Utility
             ForRequestedType<IPostRepository>().TheDefaultIsConcreteType<PostRepository>();
             ForRequestedType<ITagRepository>().TheDefaultIsConcreteType<TagRepository>();
             ForRequestedType<IAppConfigProvider>().TheDefaultIsConcreteType<AppConfigProvider>();
+            ForRequestedType<ICommentRepository>().TheDefaultIsConcreteType<CommentRepository>();
+            ForRequestedType<IUserRepository>().TheDefaultIsConcreteType<UserRepository>();
         }
     }
 }

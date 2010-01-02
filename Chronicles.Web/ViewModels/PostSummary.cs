@@ -12,6 +12,7 @@ namespace Chronicles.Web.ViewModels
         public string Summary { get; set; }
         public int Id { get; set; }
         public DateTime PublishedDate { get; set; }
-        public Tag[] Tags;
+        public Tag[] Tags { get; set; }
+        public int CommentCount { get; set; }
     }
 }

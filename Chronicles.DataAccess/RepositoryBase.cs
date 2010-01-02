@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Chronicles.Entities.Context;
+using NHibernate;
 
 namespace Chronicles.DataAccess
 {
     public abstract class RepositoryBase
     {
-        public RepositoryBase(DbContext ctx)
+        protected RepositoryBase(DbContext ctx)
         {
-            dbContext = ctx;
+            DbContext = ctx;
         }
 
-        private DbContext dbContext;
-        protected DbContext DbContext
+        protected DbContext DbContext { get; private set; }
+
+        protected ISession Session
         {
             get
             {
-                return dbContext;
+                return DbContext.Session;
             }
         }
     }

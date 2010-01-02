@@ -114,7 +114,15 @@ A
 	color: #3C7B9D;
 	text-decoration: none;
 }
+A *
+{
+	cursor: hand;
+}
 A:hover
+{
+	text-decoration: underline;
+}
+A:hover *
 {
 	text-decoration: underline;
 }
@@ -194,13 +202,200 @@ UL.post-tags
 	text-transform: uppercase;
 	background: url(../img/tag.png) no-repeat top left;
 }
+.section H2
+{
+	font: 1.45em Tahoma;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	padding: 5px 0 3px;
+	color: #6ABEEA;
+	width: 100%;
+	background: url(../img/dotline.png) repeat-x bottom left;
+}
+.comment-box
+{
+	margin: 20px 5px;
+	clear: both;
+	width: 630px;
+}
+.hline
+{
+	background: url(../img/dotline.png) repeat-x center center;
+	width: 100%;
+	height: 2px;
+}
+.comment-box IMG
+{
+	border: 1px solid #D8D8D8;
+	height: 50px;
+	width: 50px;
+	display: block;
+	padding: 4px;
+	float: left;
+}
+.user-info-name
+{
+	display: block;
+	width: 200px;
+	font: bold 0.85em "courier new", courier, "Andale Mono", monospace;
+	text-transform: uppercase;
+	float: left;
+	padding-left: 10px;
+}
+A SPAN.user-info-name
+{
+	color: #50A7D2;
+}
+.user-info-date
+{
+	width: 200px;
+	text-align: right;
+	float: right;
+	text-transform: uppercase;
+	font: bold 0.85em "courier new", courier, "Andale Mono", monospace;
+}
+.comment-text
+{
+	width: 560px;
+	margin: 0px 0 0 70px;
+	padding-top: 20px;
+	text-align: justify;
+	min-height: 50px;
+	height:auto !important;
+  	height:50px;
+}
+
+.comment-text p {
+	margin-bottom:.6em;
+}
+
+.button
+{
+	display: block;
+	text-transform: uppercase;
+	font: 0.85em Tahoma;
+	color: #6ABEEA;
+	background: #FAF8F6;
+	padding: 3px 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 2px solid #6ABEEA;
+	cursor: pointer;
+}
+.button:hover
+{
+	border: 2px solid #FBA627;
+	text-decoration: none;
+	color: #FBA627;
+}
+#add-comment-form
+{
+	text-transform: uppercase;
+}
+#add-comment-form INPUT, #add-comment-form TEXTAREA
+{
+	float: left;
+	width: 600px;
+	border: 2px solid #D6D6D6;
+	background-color: #F6F6F6;
+	padding: 5px 10px;
+	font: 1em corbel;
+	vertical-align: middle;
+	clear: both;
+}
+#add-comment-form INPUT:focus, #add-comment-form TEXTAREA:focus
+{
+	background-color: #FFFFFF;
+	border: 2px solid #337F9D;
+}
+#add-comment-form INPUT
+{
+	padding-left: 30px;
+	height: 1.2em;
+	width: 580px;
+}
+#add-comment-form TEXTAREA
+{
+	overflow: auto;
+}
+#add-comment-form FIELDSET
+{
+	padding: 0 10px;
+}
+#add-comment-form P
+{
+	padding: 15px 0 5px;
+	float: left;
+	font: bold 0.85em "courier new", courier, "Andale Mono", monospace;
+	color: #9BB3C9;
+	clear: both;
+}
+#add-comment-form BUTTON
+{
+	margin-top: 15px;
+	text-align: center;
+	width: 100px;
+}
+.comment-name
+{
+	background-image: url(../img/form-ico.gif);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: 0px 0px;
+}
+.comment-email
+{
+	background: url(../img/form-ico.gif) no-repeat scroll 0px -30px;
+}
+.comment-web
+{
+	background: url(../img/form-ico.gif) no-repeat scroll 0px -60px;
+}
+.comment-count
+{
+	float: right;
+	font: bold 0.7em verdana, "Lucida Grande", sans-serif;
+	height: 20px;
+	padding-top: 5px;
+}
 /*classes*/
 .transparent
 {
 	background: transparent;
 	border: none;
 }
+span.required
+{
+	color: #FF0000;
+	padding-left: 3px;
+}
 .invisible
 {
 	left: -1000px;
+}
+.clear
+{
+	display: block;
+	width: 100px;
+	clear: both;
+	float: left;
+	background: #BF0707;
+	height: 10px;
+}
+.float-right
+{
+	float: right;
+}
+
+label.error
+{
+    color:red;
+    float:right;
+    font-family:"courier new",courier,"Andale Mono",monospace;
+    font-size:0.7em;
+    position:relative;
+    padding: 2px;
+    font-weight:bold;
+    letter-spacing:1px;
 }

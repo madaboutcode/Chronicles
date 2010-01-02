@@ -21,6 +21,7 @@ using T4MVC;
 [CompilerGenerated]
 public static class MVC {
     public static Chronicles.Web.Controllers.ArchivesController Archives = new Chronicles.Web.Controllers.T4MVC_ArchivesController();
+    public static Chronicles.Web.Controllers.CommentController Comment = new Chronicles.Web.Controllers.T4MVC_CommentController();
     public static Chronicles.Web.Controllers.HomeController Home = new Chronicles.Web.Controllers.T4MVC_HomeController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
@@ -161,6 +162,7 @@ namespace Links {
         public static readonly string MicrosoftAjax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftAjax.min.js") ? Url("MicrosoftAjax.min.js") : Url("MicrosoftAjax.js");
         public static readonly string MicrosoftMvcAjax_debug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftMvcAjax.debug.min.js") ? Url("MicrosoftMvcAjax.debug.min.js") : Url("MicrosoftMvcAjax.debug.js");
         public static readonly string MicrosoftMvcAjax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftMvcAjax.min.js") ? Url("MicrosoftMvcAjax.min.js") : Url("MicrosoftMvcAjax.js");
+        public static readonly string MicrosoftMvcJQueryValidation_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftMvcJQueryValidation.min.js") ? Url("MicrosoftMvcJQueryValidation.min.js") : Url("MicrosoftMvcJQueryValidation.js");
         public static readonly string MicrosoftMvcValidation_debug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftMvcValidation.debug.min.js") ? Url("MicrosoftMvcValidation.debug.min.js") : Url("MicrosoftMvcValidation.debug.js");
         public static readonly string MicrosoftMvcValidation_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MicrosoftMvcValidation.min.js") ? Url("MicrosoftMvcValidation.min.js") : Url("MicrosoftMvcValidation.js");
     }
@@ -179,9 +181,13 @@ namespace Links {
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string blogtitle_bg_jpg = Url("blogtitle_bg.jpg");
+        public static readonly string dot_png = Url("dot.png");
+        public static readonly string dotline_png = Url("dotline.png");
+        public static readonly string form_ico_gif = Url("form-ico.gif");
         public static readonly string logo_jpg = Url("logo.jpg");
         public static readonly string quote_jpg = Url("quote.jpg");
         public static readonly string rss_jpg = Url("rss.jpg");
+        public static readonly string tag_png = Url("tag.png");
     }
 
 }
@@ -217,3 +223,5 @@ namespace T4MVC {
 
 #endregion T4MVC
 #pragma warning restore 1591
+
+

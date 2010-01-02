@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentServices.cs" />
     <Compile Include="PostServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TagServices.cs" />

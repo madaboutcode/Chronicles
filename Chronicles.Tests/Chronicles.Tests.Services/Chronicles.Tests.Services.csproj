@@ -62,8 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentServicesTest.cs" />
     <Compile Include="PostServicesTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserServicesTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Chronicles.DataAccess\Chronicles.DataAccess.csproj">

@@ -59,12 +59,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentRepository.cs" />
+    <Compile Include="Facade\ICommentRepository.cs" />
     <Compile Include="Facade\IPostRepository.cs" />
     <Compile Include="Facade\ITagRepository.cs" />
+    <Compile Include="Facade\IUserRepository.cs" />
     <Compile Include="PostRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="TagRepository.cs" />
+    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -16,6 +16,8 @@ namespace Chronicles.Entities
         public virtual int UserId { get; set; }
         public virtual bool Approved { get; set; }
         public virtual IList<Tag> Tags { get; protected set; }
+        public virtual int CommentCount { get; set; }
+        public virtual IList<Comment> Comments { get; set; }
 
         public Post()
         {

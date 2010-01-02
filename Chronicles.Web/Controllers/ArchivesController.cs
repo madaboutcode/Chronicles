@@ -7,6 +7,7 @@ using Chronicles.Services;
 using Chronicles.Entities;
 using AutoMapper;
 using Chronicles.Web.ViewModels;
+using Chronicles.Framework;
 
 namespace Chronicles.Web.Controllers
 {
@@ -14,7 +15,7 @@ namespace Chronicles.Web.Controllers
     {
         PostServices postServices;
 
-        public ArchivesController(PostServices postServices)
+        public ArchivesController(PostServices postServices, AppConfiguration config)
         {
             this.postServices = postServices;
         }
@@ -29,8 +30,20 @@ namespace Chronicles.Web.Controllers
             //if(p == null)
             //return View("PostNotFound");
 
-            return View(Mapper.Map<Post, PostSummary>(p));
+            PostDetails details = Mapper.Map<Post, PostDetails>(p);
+
+            return View(details);
         }
 
+
+        public virtual ActionResult ViewPostsByTag(string tagname, int pageNumber)
+        {
+            int totalPages = 0;
+            //TODO: build pagination
+            IList<Post> posts = postServices.GetPostsByTag(tagname, 25, 1, out totalPages);
+
+            //TODO: show not found page if there are no records
+            return View(Mapper.Map<IList<Post>, PostSummary[]>(posts));
+        }
     }
 }

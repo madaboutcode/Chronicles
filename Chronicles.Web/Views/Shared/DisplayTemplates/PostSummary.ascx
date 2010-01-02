@@ -2,7 +2,7 @@
 <% 
     DateTime pubDate = Model.PublishedDate;
     
-    string postLink = Url.Action(MVC.Archives.ViewPost(pubDate.Year, pubDate.Month, pubDate.Day, Model.Id, Model.Title)); 
+    string postLink = Url.Action(MVC.Archives.ViewPost(pubDate.Year, pubDate.Month, pubDate.Day, Model.Id, Html.GetTextForUrl(Model.Title))); 
 %>
 <div class="entry">
     <span class="entry-date"><%= Model.PublishedDate.ToString("yyyy-MMM-dd") %></span> 
@@ -12,5 +12,8 @@
         <ul class="post-tags">
             <%= Html.DisplayFor(p=>p.Tags) %>
         </ul>
+        <div class="comment-count">
+        	<%=Model.CommentCount %> comments
+        </div>
     </div>
 </div>

@@ -33,6 +33,22 @@ namespace Chronicles.Entities.Context
                 return Session.Linq<Tag>();
             }
         }
+
+        public IOrderedQueryable<Comment> Comments
+        {
+            get
+            {
+                return Session.Linq<Comment>();
+            }
+        }
+
+        public IOrderedQueryable<User> Users
+        {
+            get
+            {
+                return Session.Linq<User>();
+            }
+        }
         #endregion Entity Aliases
     }
 }

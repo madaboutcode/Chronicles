@@ -31,6 +31,10 @@ namespace Chronicles.Web.Controllers {
         public System.Web.Mvc.ActionResult ViewPost() {
             return new T4MVC_ActionResult(Area, Name, Actions.ViewPost);
         }
+        [NonAction]
+        public System.Web.Mvc.ActionResult ViewPostsByTag() {
+            return new T4MVC_ActionResult(Area, Name, Actions.ViewPostsByTag);
+        }
 
         public readonly string Area = "";
         public readonly string Name = "Archives";
@@ -39,6 +43,7 @@ namespace Chronicles.Web.Controllers {
         public ActionNames Actions { get { return s_actions; } }
         public class ActionNames {
             public readonly string ViewPost = "ViewPost";
+            public readonly string ViewPostsByTag = "ViewPostsByTag";
         }
 
 
@@ -46,6 +51,7 @@ namespace Chronicles.Web.Controllers {
         public ViewNames Views { get { return s_views; } }
         public class ViewNames {
             public readonly string ViewPost = "~/Views/Archives/ViewPost.aspx";
+            public readonly string ViewPostsByTag = "~/Views/Archives/ViewPostsByTag.aspx";
         }
     }
 
@@ -60,6 +66,13 @@ namespace Chronicles.Web.Controllers {
             callInfo.RouteValues.Add("day", day);
             callInfo.RouteValues.Add("id", id);
             callInfo.RouteValues.Add("title", title);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult ViewPostsByTag(string tagname, int pageNumber) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, Actions.ViewPostsByTag);
+            callInfo.RouteValues.Add("tagname", tagname);
+            callInfo.RouteValues.Add("pageNumber", pageNumber);
             return callInfo;
         }
 

@@ -18,7 +18,7 @@ namespace Chronicles.Entities.NHMapping
                 .Cascade.All()
                 .Table("PostsTags")
                 .ParentKeyColumn("TagId")
-                .ParentKeyColumn("PostId")
+                .ChildKeyColumn("PostId")
                 .Inverse();
         }
     }

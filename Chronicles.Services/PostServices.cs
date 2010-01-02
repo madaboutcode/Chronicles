@@ -91,5 +91,30 @@ namespace Chronicles.Services
         {
             return postRepository.GetPostById(id);
         }
+
+        //TODO: unit test
+        public IList<Post> GetPostsByTag(string tagName, int pageSize, int pageNumber, out int totalPages)
+        {
+            if (string.IsNullOrEmpty(tagName))
+                throw new ArgumentException("tagName should be a valid value");
+
+            if (pageSize <= 0)
+                throw new ArgumentOutOfRangeException("pagesize must be greater than 0");
+
+            if (pageNumber <= 0)
+                throw new ArgumentOutOfRangeException("pageNumber must be greater than zero");
+
+            int totalRows;
+            
+            IList<Post> posts = postRepository.GetPostsByTag(tagName, pageSize, pageNumber, out totalRows);
+
+            if (totalRows > 0)
+            {
+                totalPages = Convert.ToInt32(Math.Ceiling(totalRows * 1.0 / pageSize));
+            }
+            else totalPages = 0;
+
+            return posts;
+        }
     }
 }
