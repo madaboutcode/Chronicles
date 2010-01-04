@@ -5,7 +5,7 @@ using System.Text;
 using Chronicles.Entities;
 using Chronicles.DataAccess.Facade;
 using Chronicles.Framework;
-using Chronicles.Entities.Context;
+using Chronicles.DataAccess.Context;
 
 namespace Chronicles.DataAccess
 {

@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comment.cs" />
-    <Compile Include="Context\DbContext.cs" />
     <Compile Include="NHMapping\CommentMap.cs" />
     <Compile Include="NHMapping\PostMap.cs" />
     <Compile Include="NHMapping\TagMap.cs" />

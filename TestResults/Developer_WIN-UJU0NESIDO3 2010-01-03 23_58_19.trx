@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="159f4b94-fc63-4388-bd22-9a2c036557a8" name="Developer@WIN-UJU0NESIDO3 2010-01-03 23:58:19" runUser="WIN-UJU0NESIDO3\Developer" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="6a7a74ba-b3e1-4edd-ba7e-5acb85ef3f83">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\@projects\Chronicles\SourceCode\TestResults\Developer_WIN-UJU0NESIDO3 2010-01-03 23_58_19">
+      <DeploymentItem filename="C:\@projects\Chronicles\SourceCode\_Dependencies\structuremap\StructureMap.dll" />
+      <DeploymentItem filename="C:\@projects\Chronicles\SourceCode\Chronicles.Services\bin\Debug\Chronicles.Services.dll" />
+      <DeploymentItem filename="C:\@projects\Chronicles\SourceCode\_Dependencies\moq\Moq.dll" />
+      <DeploymentItem filename="C:\@projects\Chronicles\SourceCode\_Dependencies\nbuilder\FizzWare.NBuilder.dll" />
+      <DeploymentItem filename="C:\@projects\Chronicles\SourceCode\_Dependencies\structuremap\StructureMap.AutoMocking.dll" />
+      <DeploymentItem filename="C:\@projects\Chronicles\SourceCode\Chronicles.Entities\bin\Debug\Chronicles.Entities.dll" />
+      <DeploymentItem filename="C:\@projects\Chronicles\SourceCode\Chronicles.Framework\bin\Debug\Chronicles.Framework.dll" />
+      <DeploymentItem filename="C:\@projects\Chronicles\SourceCode\Chronicles.DataAccess\bin\Debug\Chronicles.DataAccess.dll" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="25" executed="25" passed="25" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2010-01-03T23:58:19.5156250-05:00" queuing="2010-01-03T23:58:22.3125000-05:00" start="2010-01-03T23:58:22.7812500-05:00" finish="2010-01-03T23:58:24.9218750-05:00" />
+  <TestDefinitions>
+    <UnitTest name="AddPost_when_adding_an_tag_with_a_blank_tagname_should_throw_exception" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="dcd7e80e-0d0b-b1eb-2af6-4026d446218e">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="e514a3b1-4722-4555-be51-08ea2991ea4d" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_when_adding_an_tag_with_a_blank_tagname_should_throw_exception" />
+    </UnitTest>
+    <UnitTest name="GetNewOrExistingUser_when_user_exists_it_should_return_the_existing_user" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="701708dd-503f-c845-3b3c-fe422c436b2b">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="b9564bc7-c1b9-43c5-843e-346c31ce6aed" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.UserServicesTest, Chronicles.Tests.Services" name="GetNewOrExistingUser_when_user_exists_it_should_return_the_existing_user" />
+    </UnitTest>
+    <UnitTest name="AddComment_when_comment_has_user_it_should_fetch_proper_user_from_the_user_service" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="4886e142-4139-0859-d2ee-f54e35c2c697">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="2e71682d-0afe-4aa5-8e33-227d4e17ef45" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.CommentServicesTest, Chronicles.Tests.Services" name="AddComment_when_comment_has_user_it_should_fetch_proper_user_from_the_user_service" />
+    </UnitTest>
+    <UnitTest name="GetNewOrExistingUser_when_user_exists_and_name_is_different_then_it_should_return_existing_user_with_new_name" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="069dbecd-3720-021e-2f5b-dd4e485e9afb">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8a87ea75-bbbb-47b7-8a88-be31d81473b9" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.UserServicesTest, Chronicles.Tests.Services" name="GetNewOrExistingUser_when_user_exists_and_name_is_different_then_it_should_return_existing_user_with_new_name" />
+    </UnitTest>
+    <UnitTest name="AddPost_when_adding_a_tag_that_doesnot_exists_should_add_a_new_tag_with_id_equal_to_zero" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="a103ff9a-4b74-8607-a222-335855016e53">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="c56e63b4-8c93-4278-b015-cb59da62151e" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_when_adding_a_tag_that_doesnot_exists_should_add_a_new_tag_with_id_equal_to_zero" />
+    </UnitTest>
+    <UnitTest name="AddComment_when_comment_has_post_as_null_it_should_throw_ArgumentException" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="99102b0c-b4f6-8a22-bc68-c2737385c3c3">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="f64faa9a-cbfa-47c0-adb7-b447dc9ae18d" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.CommentServicesTest, Chronicles.Tests.Services" name="AddComment_when_comment_has_post_as_null_it_should_throw_ArgumentException" />
+    </UnitTest>
+    <UnitTest name="AddComment_when_comment_is_null_it_should_throw_ArgumentNullException" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="53ba3c5c-e665-86b9-7670-a30a88f03188">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="06582801-b48b-4b29-a40d-17a2efc2da0a" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.CommentServicesTest, Chronicles.Tests.Services" name="AddComment_when_comment_is_null_it_should_throw_ArgumentNullException" />
+    </UnitTest>
+    <UnitTest name="GetPostById_with_id_should_call_repository_with_proper_id" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="c52ebfd1-9a82-6b2b-3a78-e23cee10ddcd">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8e872481-cc9a-488b-91a1-c8d8d7b9d976" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="GetPostById_with_id_should_call_repository_with_proper_id" />
+    </UnitTest>
+    <UnitTest name="GetLatestPosts_with_args_should_return_correct_number_of_posts" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="650b784d-42e6-ce66-c84f-baf820a70889">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5e041abc-e81c-47ac-8178-f59c4adb5afb" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="GetLatestPosts_with_args_should_return_correct_number_of_posts" />
+    </UnitTest>
+    <UnitTest name="AddPost_with_null_post_should_throw_exception" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="be19293a-e274-384f-65de-14180a51dc45">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="7045dd8d-0d56-4999-85cd-b8d5b64fa726" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_with_null_post_should_throw_exception" />
+    </UnitTest>
+    <UnitTest name="AddComment_when_comment_is_added_the_date_field_should_be_the_current_date_and_time" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="610ffd8f-b337-6f2c-f1a7-c42d257ee82a">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="e1156f3a-9f56-4a6f-b100-82d6198affe6" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.CommentServicesTest, Chronicles.Tests.Services" name="AddComment_when_comment_is_added_the_date_field_should_be_the_current_date_and_time" />
+    </UnitTest>
+    <UnitTest name="AddPost_when_adding_a_post_the_dates_should_be_proper" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="4f5dd903-2b4d-069c-b558-ac24ee25ee32">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="1cde6510-b234-47ef-9288-16e0c7fb8fe1" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_when_adding_a_post_the_dates_should_be_proper" />
+    </UnitTest>
+    <UnitTest name="AddPost_when_adding_a_tag_that_already_exists_should_use_the_same_instance_of_the_tag" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="aa2def4a-c65a-1bcb-3203-6261d0fb3879">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="4ace40a9-85c1-40af-96eb-f4e448614bdb" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_when_adding_a_tag_that_already_exists_should_use_the_same_instance_of_the_tag" />
+    </UnitTest>
+    <UnitTest name="GetNewOrExistingUser_when_user_doesnot_have_an_email_it_should_throw_ArgumentException" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="4138e248-baae-062b-5c54-547a4c762ba2">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="a1ed8433-262f-4a4d-bf25-a2d16869752c" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.UserServicesTest, Chronicles.Tests.Services" name="GetNewOrExistingUser_when_user_doesnot_have_an_email_it_should_throw_ArgumentException" />
+    </UnitTest>
+    <UnitTest name="AddComment_when_comment_is_added_the_approved_field_should_be_false" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="e0b54a3e-252e-88ff-e320-dafc3d7f397f">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="530ac589-73ce-4233-be4b-3fa7d33af949" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.CommentServicesTest, Chronicles.Tests.Services" name="AddComment_when_comment_is_added_the_approved_field_should_be_false" />
+    </UnitTest>
+    <UnitTest name="AddPost_when_adding_a_post_with_a_past_scheduled_date_should_change_it_to_current_date" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="39300261-4af8-afea-aa28-f592d70bb6b2">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="8c75eaa2-6a88-4c6a-8b9f-8d3db0fa7072" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_when_adding_a_post_with_a_past_scheduled_date_should_change_it_to_current_date" />
+    </UnitTest>
+    <UnitTest name="AddPost_when_adding_a_post_with_a_future_scheduled_date_should_keep_the_date" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="14245d52-aaf9-6363-df1d-d2e35d125d73">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="4930f73f-b978-4f22-adb9-09a009915fcf" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_when_adding_a_post_with_a_future_scheduled_date_should_keep_the_date" />
+    </UnitTest>
+    <UnitTest name="AddPost_when_adding_a_post_the_id_should_be_zero" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="f0dfa829-f92e-fd7f-85e7-95f35f005edd">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="c263e27c-aa45-48c3-80bb-e098797d6aad" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_when_adding_a_post_the_id_should_be_zero" />
+    </UnitTest>
+    <UnitTest name="AddComment_when_comment_has_post_with_id_0_it_should_throw_ArgumentException" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="fd1c454e-6391-81fa-2af1-1c9082e976ce">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="157a9058-2e32-4896-a256-c42b8aa3e971" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.CommentServicesTest, Chronicles.Tests.Services" name="AddComment_when_comment_has_post_with_id_0_it_should_throw_ArgumentException" />
+    </UnitTest>
+    <UnitTest name="AddPost_with_no_tags_should_throw_exception" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="5adc3005-27d6-96f3-18e3-17e41d1211e9">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="4a638675-fbfe-4e45-bfe4-fe86641209d5" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_with_no_tags_should_throw_exception" />
+    </UnitTest>
+    <UnitTest name="AddPost_when_adding_a_tag_should_get_rid_of_duplicate_tags" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="0a86b259-8591-05ef-236e-23a9f0249c18">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="c5f72190-f265-44cb-abd1-149a52ba765e" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_when_adding_a_tag_should_get_rid_of_duplicate_tags" />
+    </UnitTest>
+    <UnitTest name="GetLatestPosts_should_return_ten_posts" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="9a58d3cd-d6c8-8840-ee5f-87db72351a62">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5c82d972-10a2-480c-bad9-04b12b1fa933" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="GetLatestPosts_should_return_ten_posts" />
+    </UnitTest>
+    <UnitTest name="GetNewOrExistingUser_when_user_doesnot_exists_new_user_should_be_created_with_proper_fields" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="7b9c2f0f-b668-bed5-d606-835aafd6d809">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="2d40495b-f286-49a2-8595-19f72380f54f" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.UserServicesTest, Chronicles.Tests.Services" name="GetNewOrExistingUser_when_user_doesnot_exists_new_user_should_be_created_with_proper_fields" />
+    </UnitTest>
+    <UnitTest name="AddComment_when_comment_has_user_as_null_it_should_throw_ArgumentException_" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="8d8cf0a2-e4cf-7ef3-63c3-f7a149d4500d">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="df588d11-d3f2-4ff2-8a18-4bcc365aa2a2" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.CommentServicesTest, Chronicles.Tests.Services" name="AddComment_when_comment_has_user_as_null_it_should_throw_ArgumentException_" />
+    </UnitTest>
+    <UnitTest name="AddPost_when_adding_a_post_the_userid_should_be_set_to_one" storage="c:\@projects\chronicles\sourcecode\chronicles.tests\chronicles.tests.services\bin\debug\chronicles.tests.services.dll" id="5a669aa8-f633-04a4-761d-a1c19c1af631">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="223a16b7-bc0f-459c-bd25-94ad7b4a4227" />
+      <TestMethod codeBase="C:\@projects\Chronicles\SourceCode\Chronicles.Tests\Chronicles.Tests.Services\bin\Debug\Chronicles.Tests.Services.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Chronicles.Tests.Services.PostServicesTest, Chronicles.Tests.Services" name="AddPost_when_adding_a_post_the_userid_should_be_set_to_one" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="069dbecd-3720-021e-2f5b-dd4e485e9afb" executionId="8a87ea75-bbbb-47b7-8a88-be31d81473b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0a86b259-8591-05ef-236e-23a9f0249c18" executionId="c5f72190-f265-44cb-abd1-149a52ba765e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="14245d52-aaf9-6363-df1d-d2e35d125d73" executionId="4930f73f-b978-4f22-adb9-09a009915fcf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39300261-4af8-afea-aa28-f592d70bb6b2" executionId="8c75eaa2-6a88-4c6a-8b9f-8d3db0fa7072" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4138e248-baae-062b-5c54-547a4c762ba2" executionId="a1ed8433-262f-4a4d-bf25-a2d16869752c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4886e142-4139-0859-d2ee-f54e35c2c697" executionId="2e71682d-0afe-4aa5-8e33-227d4e17ef45" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4f5dd903-2b4d-069c-b558-ac24ee25ee32" executionId="1cde6510-b234-47ef-9288-16e0c7fb8fe1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="53ba3c5c-e665-86b9-7670-a30a88f03188" executionId="06582801-b48b-4b29-a40d-17a2efc2da0a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5a669aa8-f633-04a4-761d-a1c19c1af631" executionId="223a16b7-bc0f-459c-bd25-94ad7b4a4227" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5adc3005-27d6-96f3-18e3-17e41d1211e9" executionId="4a638675-fbfe-4e45-bfe4-fe86641209d5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="610ffd8f-b337-6f2c-f1a7-c42d257ee82a" executionId="e1156f3a-9f56-4a6f-b100-82d6198affe6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="650b784d-42e6-ce66-c84f-baf820a70889" executionId="5e041abc-e81c-47ac-8178-f59c4adb5afb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="701708dd-503f-c845-3b3c-fe422c436b2b" executionId="b9564bc7-c1b9-43c5-843e-346c31ce6aed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7b9c2f0f-b668-bed5-d606-835aafd6d809" executionId="2d40495b-f286-49a2-8595-19f72380f54f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8d8cf0a2-e4cf-7ef3-63c3-f7a149d4500d" executionId="df588d11-d3f2-4ff2-8a18-4bcc365aa2a2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="99102b0c-b4f6-8a22-bc68-c2737385c3c3" executionId="f64faa9a-cbfa-47c0-adb7-b447dc9ae18d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9a58d3cd-d6c8-8840-ee5f-87db72351a62" executionId="5c82d972-10a2-480c-bad9-04b12b1fa933" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a103ff9a-4b74-8607-a222-335855016e53" executionId="c56e63b4-8c93-4278-b015-cb59da62151e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aa2def4a-c65a-1bcb-3203-6261d0fb3879" executionId="4ace40a9-85c1-40af-96eb-f4e448614bdb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="be19293a-e274-384f-65de-14180a51dc45" executionId="7045dd8d-0d56-4999-85cd-b8d5b64fa726" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c52ebfd1-9a82-6b2b-3a78-e23cee10ddcd" executionId="8e872481-cc9a-488b-91a1-c8d8d7b9d976" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dcd7e80e-0d0b-b1eb-2af6-4026d446218e" executionId="e514a3b1-4722-4555-be51-08ea2991ea4d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e0b54a3e-252e-88ff-e320-dafc3d7f397f" executionId="530ac589-73ce-4233-be4b-3fa7d33af949" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f0dfa829-f92e-fd7f-85e7-95f35f005edd" executionId="c263e27c-aa45-48c3-80bb-e098797d6aad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fd1c454e-6391-81fa-2af1-1c9082e976ce" executionId="157a9058-2e32-4896-a256-c42b8aa3e971" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="8a87ea75-bbbb-47b7-8a88-be31d81473b9" testId="069dbecd-3720-021e-2f5b-dd4e485e9afb" testName="GetNewOrExistingUser_when_user_exists_and_name_is_different_then_it_should_return_existing_user_with_new_name" computerName="WIN-UJU0NESIDO3" duration="00:00:00.5096650" startTime="2010-01-03T23:58:23.0312500-05:00" endTime="2010-01-03T23:58:24.0000000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c5f72190-f265-44cb-abd1-149a52ba765e" testId="0a86b259-8591-05ef-236e-23a9f0249c18" testName="AddPost_when_adding_a_tag_should_get_rid_of_duplicate_tags" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0837525" startTime="2010-01-03T23:58:24.0156250-05:00" endTime="2010-01-03T23:58:24.1093750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4930f73f-b978-4f22-adb9-09a009915fcf" testId="14245d52-aaf9-6363-df1d-d2e35d125d73" testName="AddPost_when_adding_a_post_with_a_future_scheduled_date_should_keep_the_date" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0170169" startTime="2010-01-03T23:58:24.1093750-05:00" endTime="2010-01-03T23:58:24.1406250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8c75eaa2-6a88-4c6a-8b9f-8d3db0fa7072" testId="39300261-4af8-afea-aa28-f592d70bb6b2" testName="AddPost_when_adding_a_post_with_a_past_scheduled_date_should_change_it_to_current_date" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0091098" startTime="2010-01-03T23:58:24.1406250-05:00" endTime="2010-01-03T23:58:24.1562500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a1ed8433-262f-4a4d-bf25-a2d16869752c" testId="4138e248-baae-062b-5c54-547a4c762ba2" testName="GetNewOrExistingUser_when_user_doesnot_have_an_email_it_should_throw_ArgumentException" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0144627" startTime="2010-01-03T23:58:24.1562500-05:00" endTime="2010-01-03T23:58:24.1718750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2e71682d-0afe-4aa5-8e33-227d4e17ef45" testId="4886e142-4139-0859-d2ee-f54e35c2c697" testName="AddComment_when_comment_has_user_it_should_fetch_proper_user_from_the_user_service" computerName="WIN-UJU0NESIDO3" duration="00:00:00.1178278" startTime="2010-01-03T23:58:24.1718750-05:00" endTime="2010-01-03T23:58:24.2968750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1cde6510-b234-47ef-9288-16e0c7fb8fe1" testId="4f5dd903-2b4d-069c-b558-ac24ee25ee32" testName="AddPost_when_adding_a_post_the_dates_should_be_proper" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0073051" startTime="2010-01-03T23:58:24.3125000-05:00" endTime="2010-01-03T23:58:24.3593750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="06582801-b48b-4b29-a40d-17a2efc2da0a" testId="53ba3c5c-e665-86b9-7670-a30a88f03188" testName="AddComment_when_comment_is_null_it_should_throw_ArgumentNullException" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0070679" startTime="2010-01-03T23:58:24.3593750-05:00" endTime="2010-01-03T23:58:24.3750000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="223a16b7-bc0f-459c-bd25-94ad7b4a4227" testId="5a669aa8-f633-04a4-761d-a1c19c1af631" testName="AddPost_when_adding_a_post_the_userid_should_be_set_to_one" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0072481" startTime="2010-01-03T23:58:24.3750000-05:00" endTime="2010-01-03T23:58:24.3906250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4a638675-fbfe-4e45-bfe4-fe86641209d5" testId="5adc3005-27d6-96f3-18e3-17e41d1211e9" testName="AddPost_with_no_tags_should_throw_exception" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0080753" startTime="2010-01-03T23:58:24.3906250-05:00" endTime="2010-01-03T23:58:24.4062500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e1156f3a-9f56-4a6f-b100-82d6198affe6" testId="610ffd8f-b337-6f2c-f1a7-c42d257ee82a" testName="AddComment_when_comment_is_added_the_date_field_should_be_the_current_date_and_time" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0093095" startTime="2010-01-03T23:58:24.4062500-05:00" endTime="2010-01-03T23:58:24.4218750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5e041abc-e81c-47ac-8178-f59c4adb5afb" testId="650b784d-42e6-ce66-c84f-baf820a70889" testName="GetLatestPosts_with_args_should_return_correct_number_of_posts" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0695563" startTime="2010-01-03T23:58:24.4218750-05:00" endTime="2010-01-03T23:58:24.5000000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b9564bc7-c1b9-43c5-843e-346c31ce6aed" testId="701708dd-503f-c845-3b3c-fe422c436b2b" testName="GetNewOrExistingUser_when_user_exists_it_should_return_the_existing_user" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0030107" startTime="2010-01-03T23:58:24.5000000-05:00" endTime="2010-01-03T23:58:24.5156250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2d40495b-f286-49a2-8595-19f72380f54f" testId="7b9c2f0f-b668-bed5-d606-835aafd6d809" testName="GetNewOrExistingUser_when_user_doesnot_exists_new_user_should_be_created_with_proper_fields" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0069089" startTime="2010-01-03T23:58:24.5156250-05:00" endTime="2010-01-03T23:58:24.5312500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="df588d11-d3f2-4ff2-8a18-4bcc365aa2a2" testId="8d8cf0a2-e4cf-7ef3-63c3-f7a149d4500d" testName="AddComment_when_comment_has_user_as_null_it_should_throw_ArgumentException_" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0172980" startTime="2010-01-03T23:58:24.5312500-05:00" endTime="2010-01-03T23:58:24.5468750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f64faa9a-cbfa-47c0-adb7-b447dc9ae18d" testId="99102b0c-b4f6-8a22-bc68-c2737385c3c3" testName="AddComment_when_comment_has_post_as_null_it_should_throw_ArgumentException" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0080381" startTime="2010-01-03T23:58:24.5625000-05:00" endTime="2010-01-03T23:58:24.5625000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5c82d972-10a2-480c-bad9-04b12b1fa933" testId="9a58d3cd-d6c8-8840-ee5f-87db72351a62" testName="GetLatestPosts_should_return_ten_posts" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0118068" startTime="2010-01-03T23:58:24.5781250-05:00" endTime="2010-01-03T23:58:24.5937500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c56e63b4-8c93-4278-b015-cb59da62151e" testId="a103ff9a-4b74-8607-a222-335855016e53" testName="AddPost_when_adding_a_tag_that_doesnot_exists_should_add_a_new_tag_with_id_equal_to_zero" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0089997" startTime="2010-01-03T23:58:24.5937500-05:00" endTime="2010-01-03T23:58:24.6093750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4ace40a9-85c1-40af-96eb-f4e448614bdb" testId="aa2def4a-c65a-1bcb-3203-6261d0fb3879" testName="AddPost_when_adding_a_tag_that_already_exists_should_use_the_same_instance_of_the_tag" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0127354" startTime="2010-01-03T23:58:24.6093750-05:00" endTime="2010-01-03T23:58:24.6406250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7045dd8d-0d56-4999-85cd-b8d5b64fa726" testId="be19293a-e274-384f-65de-14180a51dc45" testName="AddPost_with_null_post_should_throw_exception" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0097956" startTime="2010-01-03T23:58:24.6406250-05:00" endTime="2010-01-03T23:58:24.6562500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8e872481-cc9a-488b-91a1-c8d8d7b9d976" testId="c52ebfd1-9a82-6b2b-3a78-e23cee10ddcd" testName="GetPostById_with_id_should_call_repository_with_proper_id" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0101795" startTime="2010-01-03T23:58:24.6562500-05:00" endTime="2010-01-03T23:58:24.6718750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e514a3b1-4722-4555-be51-08ea2991ea4d" testId="dcd7e80e-0d0b-b1eb-2af6-4026d446218e" testName="AddPost_when_adding_an_tag_with_a_blank_tagname_should_throw_exception" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0103845" startTime="2010-01-03T23:58:24.6718750-05:00" endTime="2010-01-03T23:58:24.6875000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="530ac589-73ce-4233-be4b-3fa7d33af949" testId="e0b54a3e-252e-88ff-e320-dafc3d7f397f" testName="AddComment_when_comment_is_added_the_approved_field_should_be_false" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0114955" startTime="2010-01-03T23:58:24.7031250-05:00" endTime="2010-01-03T23:58:24.7187500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c263e27c-aa45-48c3-80bb-e098797d6aad" testId="f0dfa829-f92e-fd7f-85e7-95f35f005edd" testName="AddPost_when_adding_a_post_the_id_should_be_zero" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0087265" startTime="2010-01-03T23:58:24.7187500-05:00" endTime="2010-01-03T23:58:24.7343750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="157a9058-2e32-4896-a256-c42b8aa3e971" testId="fd1c454e-6391-81fa-2af1-1c9082e976ce" testName="AddComment_when_comment_has_post_with_id_0_it_should_throw_ArgumentException" computerName="WIN-UJU0NESIDO3" duration="00:00:00.0084220" startTime="2010-01-03T23:58:24.7343750-05:00" endTime="2010-01-03T23:58:24.7500000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

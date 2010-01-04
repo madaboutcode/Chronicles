@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NHibernate.Linq;
 using Chronicles.Entities;
-using Chronicles.Entities.Context;
+using Chronicles.DataAccess.Context;
 using NHibernate;
 using Chronicles.DataAccess.Facade;
 using Chronicles.Framework;

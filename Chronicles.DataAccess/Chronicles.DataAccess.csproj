@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommentRepository.cs" />
+    <Compile Include="Context\DbContext.cs" />
     <Compile Include="Facade\ICommentRepository.cs" />
     <Compile Include="Facade\IPostRepository.cs" />
     <Compile Include="Facade\ITagRepository.cs" />
