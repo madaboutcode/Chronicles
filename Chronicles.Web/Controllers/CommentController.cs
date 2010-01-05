@@ -12,7 +12,6 @@ using log4net;
 
 namespace Chronicles.Web.Controllers
 {
-    [HandleError]
     public partial class CommentController : BaseController
     {
         CommentServices commentService;
@@ -23,32 +22,5 @@ namespace Chronicles.Web.Controllers
             this.commentService = commentService;
             this.config = config;
         }
-
-        [AcceptVerbs(HttpVerbs.Post)]
-        public virtual ActionResult AddComment(CommentDetails commentDetails)
-        {
-            if (ModelState.IsValid)
-            {
-                /*CommentDetails commentDetails = new CommentDetails();
-                UpdateModel<CommentDetails>(commentDetails, form);*/
-                Comment comment = GetComment(commentDetails);
-
-                commentService.AddComment(comment, commentDetails.PostId);
-
-                return RedirectToAction(comment.Post.GetActionUrl()); 
-            }
-            else
-                return View();
-        }
-
-        private Comment GetComment(CommentDetails commentDetails)
-        {
-            Comment comment = new Comment { Text = commentDetails.Text };
-            User user = new User { Email = commentDetails.UserEmail, Name = commentDetails.UserName };
-            comment.User = user;
-
-            return comment;
-        }
-
     }
 }

@@ -27,10 +27,6 @@ namespace Chronicles.Web.Controllers {
             return RedirectToRoute(callInfo.RouteValues);
         }
 
-        [NonAction]
-        public System.Web.Mvc.ActionResult AddComment() {
-            return new T4MVC_ActionResult(Area, Name, Actions.AddComment);
-        }
 
         public readonly string Area = "";
         public readonly string Name = "Comment";
@@ -38,7 +34,6 @@ namespace Chronicles.Web.Controllers {
         static readonly ActionNames s_actions = new ActionNames();
         public ActionNames Actions { get { return s_actions; } }
         public class ActionNames {
-            public readonly string AddComment = "AddComment";
         }
 
 
@@ -51,12 +46,6 @@ namespace Chronicles.Web.Controllers {
     [CompilerGenerated]
     public class T4MVC_CommentController: Chronicles.Web.Controllers.CommentController {
         public T4MVC_CommentController() : base(Dummy.Instance) { }
-
-        public override System.Web.Mvc.ActionResult AddComment(Chronicles.Web.ViewModels.CommentDetails commentDetails) {
-            var callInfo = new T4MVC_ActionResult(Area, Name, Actions.AddComment);
-            callInfo.RouteValues.Add("commentDetails", commentDetails);
-            return callInfo;
-        }
 
     }
 }

@@ -13,7 +13,14 @@
             <%= Html.DisplayFor(p=>p.Tags) %>
         </ul>
         <div class="comment-count">
-        	<%=Model.CommentCount %> comments
+        <%if (Model.CommentCount > 0)
+          {  %>
+        	<a href="<%= postLink + "#comments"%>"><%=Model.CommentCount%> comments</a>
+        <%}
+          else
+          { %>
+            <a href="<%= postLink + "#add-comment-form"%>">Add Comment</a>
+        <%} %>
         </div>
     </div>
 </div>

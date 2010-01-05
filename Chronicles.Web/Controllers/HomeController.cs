@@ -9,6 +9,7 @@ using Chronicles.Entities;
 using AutoMapper;
 using Chronicles.Framework;
 using log4net;
+using Chronicles.Web.Utility;
 
 namespace Chronicles.Web.Controllers
 {

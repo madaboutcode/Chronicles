@@ -67,5 +67,18 @@ namespace Chronicles.Web
 
             RegisterControllerFactory();
         }
+
+        protected void Application_Error()
+        {
+            // At this point we have information about the error
+            HttpContext ctx = HttpContext.Current;
+
+            Exception exception = ctx.Server.GetLastError();
+
+            if (exception != null)
+            {
+                new ExceptionPolicyManager().ProcessException(exception);
+            }
+        }
     }
 }

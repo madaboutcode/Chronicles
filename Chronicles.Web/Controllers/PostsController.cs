@@ -12,7 +12,7 @@ using Chronicles.Web.Utility;
 
 namespace Chronicles.Web.Controllers
 {
-    public partial class PostsController : Controller
+    public partial class PostsController : BaseController
     {
         PostServices postServices;
         CommentServices commentService;
@@ -27,9 +27,8 @@ namespace Chronicles.Web.Controllers
         {
             Post p = postServices.GetPostById(id);
 
-            //TODO: 
-            //if(p == null)
-            //return View("PostNotFound");
+            if (p == null)
+                throw new RequestedResourceNotFoundException("Sorry, I don't have that post. Please check the url again");
 
             PostDetails details = Mapper.Map<Post, PostDetails>(p);
 

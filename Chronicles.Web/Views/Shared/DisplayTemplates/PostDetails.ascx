@@ -25,19 +25,22 @@
     </div>
 </div>
 <a class="button float-right" href="#">Add Comment </a>
-<div id="comments" class="section">
-    <h2>
-        Comments</h2>
-<% for (int i = 0; i < Model.Comments.Length; i++)
-   { 
-        var item = Model.Comments[i];      
-%>
-        <%if(i>0) {%>
-            <div class="hline"></div>
-        <%} %>
-        <%= Html.DisplayFor(x=>item) %> 
-<%} %>
-</div>
+
+<% if(Model.Comments.Length > 0) { %>
+    <div id="comments" class="section">
+        <h2>
+            Comments</h2>
+    <% for (int i = 0; i < Model.Comments.Length; i++)
+       { 
+            var item = Model.Comments[i];      
+    %>
+            <%if(i>0) {%>
+                <div class="hline"></div>
+            <%} %>
+            <%= Html.DisplayFor(x=>item) %> 
+    <%} %>
+    </div>
+<% } %>
 
 <%
     string name = Model.EditedComment != null && !string.IsNullOrEmpty(Model.EditedComment.UserName) ? Model.EditedComment.UserName : string.Empty;
@@ -63,7 +66,7 @@
     <input type="text" name="UserEmail" Id="UserEmail" class="required email comment-email" value="<%=email %>" />
     <p>
         Homepage</p>
-    <input type="text" name="UserWebSite" Id="WebAddress" class="comment-web" value="<%=website %>"/>
+    <input type="text" name="UserWebSite" Id="WebAddress" class="comment-web url" value="<%=website %>"/>
 </fieldset>
 <fieldset class="comment-textarea">
     <p>
