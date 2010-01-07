@@ -16,11 +16,13 @@ namespace Chronicles.Web.Controllers
     {
         PostServices postServices;
         CommentServices commentService;
+        TagServices tagService;
 
-        public PostsController(PostServices postServices, CommentServices commentService,AppConfiguration config)
+        public PostsController(PostServices postServices,TagServices tagService ,CommentServices commentService,AppConfiguration config)
         {
             this.postServices = postServices;
             this.commentService = commentService;
+            this.tagService = tagService;
         }
 
         public virtual ActionResult ViewPost(int year, int month, int day, int id, string title)
@@ -39,11 +41,25 @@ namespace Chronicles.Web.Controllers
         public virtual ActionResult ViewPostsByTag(string tagname, int pageNumber)
         {
             int totalPages = 0;
+
             //TODO: build pagination
             IList<Post> posts = postServices.GetPostsByTag(tagname, 25, 1, out totalPages);
 
             //TODO: show not found page if there are no records
-            return View(Mapper.Map<IList<Post>, PostSummary[]>(posts));
+
+            Tag tag = tagService.GetTagByNormalizedName(tagname);
+
+            // create a dummy tag if the user has used an actual tag name 
+            // in the url and we are unable to find it
+            if (tag == null)
+                tag = new Tag { TagName = tagname, NormalizedTagName = tagname };
+
+            IList<PostSummary> postSummaryList = Mapper.Map<IList<Post>, PostSummary[]>(posts);
+
+            PostsByTag pBT = new PostsByTag { Posts = postSummaryList, Tag = tag, TotalPages = totalPages};
+
+            
+            return View(pBT);
         }
 
         protected virtual ActionResult ViewPost(int id, CommentDetails commentDetails)

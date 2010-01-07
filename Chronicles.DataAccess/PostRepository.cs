@@ -68,7 +68,7 @@ namespace Chronicles.DataAccess
         {
             var posts = from tag in DbContext.Tags
                         from post in DbContext.Posts
-                        where tag.TagName == name && post.Tags.Contains(tag)
+                        where (tag.TagName == name || tag.NormalizedTagName == name) && post.Tags.Contains(tag)
                         orderby post.ScheduledDate descending
                         select post;
 

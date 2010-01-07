@@ -23,5 +23,10 @@ namespace Chronicles.Services
         {
             return tagRepository.GetAll();
         }
+
+        public Tag GetTagByNormalizedName(string name)
+        {
+            return tagRepository.GetTagByNormalizedName(name);
+        }
     }
 }

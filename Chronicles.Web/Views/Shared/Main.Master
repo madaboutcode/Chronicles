@@ -6,22 +6,17 @@
     <asp:ContentPlaceHolder ID="MetaContent" runat="server" />
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
     <link href="~/css/master.css" rel="stylesheet" type="text/css" />
-    <script language="javascript" type="text/javascript" src="<%= Links.Scripts.jquery_1_3_2_js %>" ></script>
 </head>
 <body>
 <div id="container">
   <div id="header">
   	<form id="searchbox" method="get">
-    	<input type="text" name="query" class="transparent" value="search" title="Search Box"/>
+    	<input type="text" name="query" class="transparent watermark-on" value="search" title="Search Box"/>
     </form>
   	<div id="subscribe">
     	<a href="#" title="Subscribe to my blog"><img src="<%= Links.img.rss_jpg %>" alt="Subscribe to my blog" /></a>
     </div>
-    <ul id="quicklinks" class="invisible">
-        <li><a href="#" >Home</a></li>
-        <li><a href="#" >Home</a></li>
-        <li><a href="#" >Home</a></li>
-    </ul>
+    <% Html.RenderPartial(MVC.Shared.Views.PartialViews.QuickLinksPartial); %>
   </div>
   <div id="content">
     <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -31,6 +26,8 @@
   <div id="sidebar">sidebar</div>
   <div id="footer">footer</div>
 </div>
+    <script language="javascript" type="text/javascript" src="<%= Links.scripts.jquery_1_3_2_js %>" ></script>
+    <script language="javascript" type="text/javascript" src="<%= Links.scripts.chronicles_js %>" ></script>
     <asp:ContentPlaceHolder ID="ScriptContent" runat="server" />
 </body>
 </html>

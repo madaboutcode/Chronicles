@@ -74,6 +74,8 @@ namespace Chronicles.Services
                 if (tag.DateCreated < DateTime.Now)
                     tag.DateCreated = DateTime.Now;
 
+                tag.NormalizedTagName = StringUtility.GetNormalizedText(tag.TagName, '_');
+
                 post.Tags.Remove(tag);
 
                 if (!addedTags.ContainsKey(tag.TagName))

@@ -33,6 +33,11 @@ namespace T4MVC {
                 public readonly string PostSummary = "~/Views/Shared/DisplayTemplates/PostSummary.ascx";
                 public readonly string Tag = "~/Views/Shared/DisplayTemplates/Tag.ascx";
             }
+            static readonly _PartialViews s_PartialViews = new _PartialViews();
+            public _PartialViews PartialViews { get { return s_PartialViews; } }
+            public partial class _PartialViews{
+                public readonly string QuickLinksPartial = "~/Views/Shared/PartialViews/QuickLinksPartial.ascx";
+            }
         }
     }
 

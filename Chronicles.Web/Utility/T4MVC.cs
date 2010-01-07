@@ -146,8 +146,8 @@ public class T4MVC_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResul
 
 namespace Links {
     [CompilerGenerated]
-    public static class Scripts {
-        private const string URLPATH = "~/Scripts";
+    public static class scripts {
+        private const string URLPATH = "~/scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string chronicles_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/chronicles.min.js") ? Url("chronicles.min.js") : Url("chronicles.js");
@@ -188,6 +188,14 @@ namespace Links {
         public static readonly string quote_jpg = Url("quote.jpg");
         public static readonly string rss_jpg = Url("rss.jpg");
         public static readonly string tag_png = Url("tag.png");
+    }
+
+    [CompilerGenerated]
+    public static class xslt {
+        private const string URLPATH = "~/xslt";
+        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        public static readonly string quicklinks_xslt = Url("quicklinks.xslt");
     }
 
 }

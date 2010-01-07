@@ -13,7 +13,7 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ScriptContent" runat="server">
 
-    <script src="<%= Links.Scripts.jquery_validate_min_js %>" type="text/javascript"></script>
+    <script src="<%= Links.scripts.jquery_validate_min_js %>" type="text/javascript"></script>
 
     <script language="javascript" type="text/javascript">
         $(function() {

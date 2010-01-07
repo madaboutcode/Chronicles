@@ -69,9 +69,9 @@ positioning*/
 {
 	width: 115px;
 	font: bold 1em "courier new", courier, "Andale Mono", monospace;
-	color: #656565;
 	letter-spacing: -0.6px;
 	text-align: center;
+	outline: none;
 }
 #subscribe
 {
@@ -82,13 +82,13 @@ positioning*/
 }
 #quicklinks A
 {
-	color: #3C7B9D;
+	color: #0B4F74;
 }
 #quicklinks
 {
 	top: 150px;
 	position: absolute;
-	font: bold 1em "courier new", courier, "Andale Mono", monospace;
+	font: bold 1.2em "courier new", courier, "Andale Mono", monospace;
 }
 #quicklinks LI
 {
@@ -102,6 +102,24 @@ positioning*/
 #sidebar
 {
 	padding: 30px 0 0;
+}
+#logo-overlay
+{
+	position: absolute;
+	width: 290px;
+	display: block;
+	height: 40px;
+	top: 65px;
+	left: 325px;
+	text-decoration: none;
+}
+.section-content
+{
+	padding: 10px 0 0 5px;
+}
+.about-section IMG
+{
+	float: left;
 }
 /*element styles*/
 BODY
@@ -261,14 +279,13 @@ A SPAN.user-info-name
 	padding-top: 20px;
 	text-align: justify;
 	min-height: 50px;
-	height:auto !important;
-  	height:50px;
+	height: auto !important;
+	height: 50px;
 }
-
-.comment-text p {
-	margin-bottom:.6em;
+.comment-text P
+{
+	margin-bottom: 0.6em;
 }
-
 .button
 {
 	display: block;
@@ -365,7 +382,7 @@ A SPAN.user-info-name
 	background: transparent;
 	border: none;
 }
-span.required
+SPAN.required
 {
 	color: #FF0000;
 	padding-left: 3px;
@@ -387,15 +404,22 @@ span.required
 {
 	float: right;
 }
-
-label.error
+LABEL.error
 {
-    color:red;
-    float:right;
-    font-family:"courier new",courier,"Andale Mono",monospace;
-    font-size:0.7em;
-    position:relative;
-    padding: 2px;
-    font-weight:bold;
-    letter-spacing:1px;
+	color: #FF0000;
+	float: right;
+	font-family: "courier new", courier, "Andale Mono", monospace;
+	font-size: 0.7em;
+	position: relative;
+	padding: 2px;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+.search-input
+{
+	color: #656565;
+}
+.watermark-on
+{
+	color: #8E9399;
 }

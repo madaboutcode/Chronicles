@@ -11,6 +11,7 @@ namespace Chronicles.Entities
         public virtual int Id { get; set; }
         public virtual DateTime DateCreated { get; set; }
         public virtual IList<Post> Posts { get; protected set; }
+        public virtual string NormalizedTagName { get; set; } 
 
         public Tag()
         {

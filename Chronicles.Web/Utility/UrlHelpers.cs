@@ -5,6 +5,7 @@ using System.Web;
 using Chronicles.Entities;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
+using Chronicles.Framework;
 
 namespace Chronicles.Web.Utility
 {
@@ -14,14 +15,7 @@ namespace Chronicles.Web.Utility
         {
             DateTime date = post.ScheduledDate;
 
-            return MVC.Posts.ViewPost(date.Year, date.Month, date.Day, post.Id, GetTextForUrl(post.Title));
-        }
-
-        private static readonly Regex titleRegex = new Regex("[^a-zA-Z0-9]+", RegexOptions.Compiled);
-
-        public static String GetTextForUrl(string text)
-        {
-            return titleRegex.Replace(text, "-");
+            return MVC.Posts.ViewPost(date.Year, date.Month, date.Day, post.Id, StringUtility.GetNormalizedText(post.Title));
         }
     }
 }

@@ -32,7 +32,8 @@ const string LinksNamespace = "Links";
 readonly string[] StaticFilesFolders = new string[] {
     "Scripts",
     "css",
-    "img"
+    "img",
+    "xslt"
 };
 
 // If true, the template marks itself as unsaved as part of its execution.

@@ -130,20 +130,20 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
-    <Content Include="Scripts\jquery-1.3.2.js" />
-    <Content Include="Scripts\jquery-1.3.2.min.js" />
-    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.min-vsdoc.js" />
-    <Content Include="Scripts\MicrosoftAjax.js" />
-    <Content Include="Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="scripts\jquery-1.3.2.js" />
+    <Content Include="scripts\jquery-1.3.2.min.js" />
+    <Content Include="scripts\jquery-1.3.2-vsdoc.js" />
+    <Content Include="scripts\jquery-1.3.2.min-vsdoc.js" />
+    <Content Include="scripts\jquery.validate.js" />
+    <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery.validate.min-vsdoc.js" />
+    <Content Include="scripts\MicrosoftAjax.js" />
+    <Content Include="scripts\MicrosoftAjax.debug.js" />
+    <Content Include="scripts\MicrosoftMvcAjax.js" />
+    <Content Include="scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="scripts\MicrosoftMvcValidation.js" />
+    <Content Include="scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -216,6 +216,7 @@
     <Content Include="bin\Remotion.Data.Linq.dll" />
     <Content Include="bin\Remotion.dll" />
     <Content Include="bin\Remotion.Interfaces.dll" />
+    <Content Include="content\xml\quicklinks.xml" />
     <Content Include="css\master.css" />
     <Content Include="img\blogtitle_bg.jpg" />
     <Content Include="img\dot.png" />
@@ -225,7 +226,7 @@
     <Content Include="img\quote.jpg" />
     <Content Include="img\rss.jpg" />
     <Content Include="img\tag.png" />
-    <Content Include="Scripts\chronicles.js" />
+    <Content Include="scripts\chronicles.js" />
     <Content Include="Views\Posts\ViewPost.aspx" />
     <Content Include="Views\Posts\ViewPostsByTag.aspx" />
     <Content Include="Views\Home\Index.aspx" />
@@ -235,6 +236,8 @@
     <Content Include="Views\Shared\DisplayTemplates\Tag.ascx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\Main.Master" />
+    <Content Include="Views\Shared\PartialViews\QuickLinksPartial.ascx" />
+    <Content Include="xslt\quicklinks.xslt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Utility\T4MVC.settings.t4" />

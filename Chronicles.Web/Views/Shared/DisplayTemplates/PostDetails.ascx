@@ -24,7 +24,10 @@
         <% } %>
     </div>
 </div>
-<a class="button float-right" href="#">Add Comment </a>
+
+<%if(Model.Comments !=null && Model.Comments.Length > 2) { %>
+<a class="button float-right" href="#add-comment-form">Add Comment </a>
+<%} %>
 
 <% if(Model.Comments.Length > 0) { %>
     <div id="comments" class="section">

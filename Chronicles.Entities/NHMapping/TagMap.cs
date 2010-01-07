@@ -14,6 +14,7 @@ namespace Chronicles.Entities.NHMapping
             Id(x => x.Id);
             Map(x => x.TagName);
             Map(x => x.DateCreated);
+            Map(x => x.NormalizedTagName);
             HasManyToMany(x => x.Posts)
                 .Cascade.All()
                 .Table("PostsTags")

@@ -24,6 +24,13 @@ namespace Chronicles.DataAccess
                     select tag).FirstOrDefault<Tag>();
         }
 
+        public Tag GetTagByNormalizedName(string normalizedName)
+        {
+            return (from tag in DbContext.Tags
+                    where tag.NormalizedTagName == normalizedName
+                    select tag).FirstOrDefault<Tag>();
+        }
+
         public IList<Tag> GetAll()
         {
             return (from tag in DbContext.Tags

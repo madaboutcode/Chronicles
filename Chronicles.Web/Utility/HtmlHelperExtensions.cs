@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
 using System.Text;
+using Chronicles.Framework;
+using System.Xml.Xsl;
+using System.IO;
 
 namespace Chronicles.Web.Utility
 {
@@ -24,7 +27,7 @@ namespace Chronicles.Web.Utility
 
         public static String GetTextForUrl(this HtmlHelper html, string text)
         {
-            return UrlHelpers.GetTextForUrl(text);
+            return StringUtility.GetNormalizedText(text);
         }
 
         public static MvcHtmlString AsciiToHtml(this HtmlHelper html, string text)
@@ -47,6 +50,56 @@ namespace Chronicles.Web.Utility
         public static string Gravatar(this HtmlHelper html, string emailId)
         {
             return GravatarProvider.GetIcon(emailId);
+        }
+
+        private static XslCompiledTransform GetTransform(string transform)
+        {
+            string cacheKey = string.Format("XslTranform:{0}", transform);
+
+            HttpContext ctx = HttpContext.Current;
+            XslCompiledTransform xsl = null;
+
+            if (ctx != null)
+            {
+                xsl = ctx.Cache.Get(cacheKey) as XslCompiledTransform;
+            }
+
+            if (xsl == null)
+            {
+                xsl = new XslCompiledTransform();
+                xsl.Load(transform);
+
+                if (ctx != null)
+                    ctx.Cache.Insert(cacheKey, xsl);
+            }
+
+            return xsl;
+        }
+
+        public static string XslTransform(this HtmlHelper html, string datafile, string transform)
+        {
+            if (string.IsNullOrEmpty(datafile))
+                throw new ArgumentException("datafile");
+
+            if (string.IsNullOrEmpty(transform))
+                throw new ArgumentNullException("transform");
+
+            HttpContextBase ctx = html.ViewContext.HttpContext;
+
+            string dataFilePath = null, transformFilePath = null;
+
+            if(ctx!=null)
+            {
+                dataFilePath = ctx.Server.MapPath(datafile);
+                transformFilePath = ctx.Server.MapPath(transform);
+            }
+
+            XslCompiledTransform xsl = GetTransform(transformFilePath);
+
+            StringWriter sw = new StringWriter();
+            xsl.Transform(dataFilePath, null, sw);
+
+            return sw.ToString();
         }
     }
 }
