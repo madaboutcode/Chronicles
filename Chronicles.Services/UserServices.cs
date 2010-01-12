@@ -24,14 +24,11 @@ namespace Chronicles.Services
             this.config = config;
         }
 
-        public virtual bool AuthenticateUser(string userName, string password, out string authenticationToken)
+        public virtual bool AuthenticateUser(string userName, string password)
         {
-            authenticationToken = null;
-
             if (string.Compare(userName, "username", true) == 0 &&
                 password == "P4$5w0rd")
             {
-                authenticationToken = "[AUTHENTICATED]";
                 return true;
             }
             return false;

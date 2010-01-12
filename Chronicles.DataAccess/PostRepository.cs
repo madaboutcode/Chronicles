@@ -68,30 +68,30 @@ namespace Chronicles.DataAccess
         {
             var posts = from tag in DbContext.Tags
                         from post in DbContext.Posts
-                        where (tag.TagName == name || tag.NormalizedTagName == name) && post.Tags.Contains(tag)
+                        where (tag.TagName == name || tag.NormalizedTagName == name) 
+                            && post.Tags.Contains(tag)
                         orderby post.ScheduledDate descending
-                        select post;
+                        select new { Post = post, CommentCount = post.Comments.Count() };
 
-            if (posts != null)
+            totalRows = posts.Count();
+
+            int pagePostStartIndex = (pagenumber - 1) * pageSize;
+
+            if (pagePostStartIndex > 0)
             {
-                totalRows = posts.Count();
-
-                IQueryable<Post> postsForDisplay = posts;
-
-                int pagePostStartIndex = (pagenumber - 1) * pageSize;
-
-                if (pagePostStartIndex > 0)
-                {
-                    postsForDisplay = posts.Skip(pagePostStartIndex);
-                }
-
-                return postsForDisplay.Take(pageSize).ToList();
+                posts = posts.Skip(pagePostStartIndex);
             }
-            else
+
+            var result = posts.Take(pageSize).ToList();
+            List<Post> postsForDisplay = new List<Post>(totalRows);
+
+            foreach (var row in result)
             {
-                totalRows = 0;
-                return new List<Post>();
+                row.Post.CommentCount = row.CommentCount;
+                postsForDisplay.Add(row.Post);
             }
+
+            return postsForDisplay;
         }
 
     }

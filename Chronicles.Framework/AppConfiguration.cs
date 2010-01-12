@@ -19,6 +19,13 @@ namespace Chronicles.Framework
 				return configProvider.GetConfig("NoOfHomePagePosts");
 			}
 		}
+		public string RecentPostsBlockCount
+		{
+			get
+			{
+				return configProvider.GetConfig("RecentPostsBlockCount");
+			}
+		}
 		public string ConnectionString
 		{
 			get

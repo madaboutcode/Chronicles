@@ -77,7 +77,7 @@ namespace Chronicles.Web
 
             if (exception != null)
             {
-                new ExceptionPolicyManager().ProcessException(exception);
+                new ExceptionPolicyManager().ProcessException(exception,ctx);
             }
         }
     }

@@ -12,6 +12,7 @@ namespace Chronicles.Entities
         public virtual Post Post { get; set; }
         public virtual DateTime Date { get; set; }
         public virtual bool Approved { get; set; }
+        public virtual int Deleted { get; set; }
 
         public virtual void AddUser(User user)
         {

@@ -62,8 +62,45 @@ namespace Chronicles.Services
             comment.Id = 0;
             comment.Date = DateTime.Now;
             comment.Approved = false;
+            comment.Deleted = 0;
 
             comment.User = userServices.GetNewOrExistingUser(comment.User);
+        }
+
+        public void DeleteComment(int commentId)
+        {
+            if (commentId <= 0)
+                throw new ArgumentOutOfRangeException("commentId");
+
+            Comment comment = commentRepository.GetComment(commentId);
+
+            if(comment == null)
+                throw new EntityNotFoundException("A comment with the given id was not found");
+
+            commentRepository.DeleteComment(comment);
+        }
+
+        public void DeleteComment(Comment comment)
+        {
+            if (comment == null) throw new ArgumentNullException("comment");
+
+            if(comment.Id <=0)
+                throw new ArgumentException("comment entity is not valid");
+
+            commentRepository.DeleteComment(comment);
+        }
+
+        public void UndeleteComment(int commentId)
+        {
+            if (commentId <= 0)
+                throw new ArgumentOutOfRangeException("commentId");
+
+            Comment comment = commentRepository.GetComment(commentId);
+
+            if (comment == null)
+                throw new EntityNotFoundException("A comment with the given id was not found");
+
+            commentRepository.UndeleteComment(comment);
         }
     }
 }

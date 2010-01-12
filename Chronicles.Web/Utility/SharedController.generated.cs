@@ -31,6 +31,7 @@ namespace T4MVC {
                 public readonly string CommentDetails = "~/Views/Shared/DisplayTemplates/CommentDetails.ascx";
                 public readonly string PostDetails = "~/Views/Shared/DisplayTemplates/PostDetails.ascx";
                 public readonly string PostSummary = "~/Views/Shared/DisplayTemplates/PostSummary.ascx";
+                public readonly string PostTeaser = "~/Views/Shared/DisplayTemplates/PostTeaser.ascx";
                 public readonly string Tag = "~/Views/Shared/DisplayTemplates/Tag.ascx";
             }
             static readonly _PartialViews s_PartialViews = new _PartialViews();

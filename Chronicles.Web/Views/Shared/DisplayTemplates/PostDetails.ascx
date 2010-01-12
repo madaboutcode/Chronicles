@@ -54,7 +54,7 @@
 
 <%= Html.ValidationSummary() %>
 
-<%using (Html.BeginForm(MVC.Posts.AddComment(), FormMethod.Post, new { @class = "section", id = "add-comment-form" }))
+<%using (Html.BeginForm(MVC.Posts.AddComment(), FormMethod.Post, new { @class = "section dataform", id = "add-comment-form" }))
   { %>
 <h2>
     Add Comment</h2>

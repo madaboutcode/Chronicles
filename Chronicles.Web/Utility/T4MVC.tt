@@ -167,7 +167,7 @@ namespace System.Web.Mvc {
             result.Controller = controller;
             result.Action = action;
             result.RouteValues = new RouteValueDictionary();
-            result.RouteValues.Add("Area", area ?? "");
+            //result.RouteValues.Add("Area", area ?? "");
             result.RouteValues.Add("Controller", controller);
             result.RouteValues.Add("Action", action);
         }

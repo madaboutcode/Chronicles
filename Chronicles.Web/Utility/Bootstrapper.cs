@@ -40,6 +40,9 @@ namespace Chronicles.Web.Utility
                 .ForMember(x => x.PublishedDate, opt => opt.MapFrom(y => y.ScheduledDate));
 
             Mapper.CreateMap<Comment, CommentDetails>();
+
+            Mapper.CreateMap<Post, PostTeaser>()
+                .ForMember(x => x.PublishedDate, opt => opt.MapFrom(y => y.ScheduledDate));
         }
     }
 
@@ -52,11 +55,13 @@ namespace Chronicles.Web.Utility
             ForRequestedType<IAppConfigProvider>().TheDefaultIsConcreteType<AppConfigProvider>().CacheBy(InstanceScope.Singleton);
             ForRequestedType<ICommentRepository>().TheDefaultIsConcreteType<CommentRepository>().CacheBy(InstanceScope.Hybrid);
             ForRequestedType<IUserRepository>().TheDefaultIsConcreteType<UserRepository>().CacheBy(InstanceScope.Hybrid);
+            ForRequestedType<IAuthenticationService>().TheDefaultIsConcreteType<FormsAuthenticationService>().CacheBy(
+                InstanceScope.Hybrid);
             ForRequestedType<ILog>()
                 .AlwaysUnique()
                 .TheDefault
                 .Is
-                .ConstructedBy((IContext context) =>
+                .ConstructedBy(context =>
                 {
                     if (context.ParentType == null)
                         return LogManager.GetLogger(context.BuildStack.Current.ConcreteType);

@@ -1,4 +1,11 @@
-﻿
+﻿function GetUrl(relUrl)
+{
+    if(typeof(baseUrl) == 'undefined')
+        baseUrl = '/';
+    
+    return baseUrl + relUrl;
+}
+
 function ShowQuickLinks() {
     var pw = $('#quicklinks').parent().width();
     var w = $('#quicklinks').width();
@@ -34,3 +41,8 @@ $(function() {
     SearchBoxWatermark();
     AttachSearchBoxSubmitEventHandler();
 });
+
+function AjaxPost(url, data, callback)
+{
+    $.post(GetUrl(url), data, callback,'json');
+}

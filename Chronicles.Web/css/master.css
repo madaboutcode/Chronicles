@@ -153,7 +153,7 @@ DIV.entry
 }
 .entry H1
 {
-	font: bold 2em Garamond, "Hoefler Text", "Times New Roman", Times, serif;
+	font: normal 2.1em Georgia, "Times New Roman", Times, serif;
 	color: #3C7B9D;
 }
 .entry A:hover H1
@@ -220,6 +220,14 @@ UL.post-tags
 	text-transform: uppercase;
 	background: url(../img/tag.png) no-repeat top left;
 }
+.section
+{
+	margin: 0 0 20px;
+}
+.section LI
+{
+	margin-bottom: 5px;
+}
 .section H2
 {
 	font: 1.45em Tahoma;
@@ -232,7 +240,7 @@ UL.post-tags
 }
 .comment-box
 {
-	margin: 20px 5px;
+	padding: 20px 5px;
 	clear: both;
 	width: 630px;
 }
@@ -306,11 +314,11 @@ A SPAN.user-info-name
 	text-decoration: none;
 	color: #FBA627;
 }
-#add-comment-form
+.dataform
 {
 	text-transform: uppercase;
 }
-#add-comment-form INPUT, #add-comment-form TEXTAREA
+.dataform INPUT, .dataform TEXTAREA
 {
 	float: left;
 	width: 600px;
@@ -321,26 +329,26 @@ A SPAN.user-info-name
 	vertical-align: middle;
 	clear: both;
 }
-#add-comment-form INPUT:focus, #add-comment-form TEXTAREA:focus
+.dataform INPUT:focus, .dataform TEXTAREA:focus
 {
 	background-color: #FFFFFF;
 	border: 2px solid #337F9D;
 }
-#add-comment-form INPUT
+.dataform INPUT
 {
 	padding-left: 30px;
 	height: 1.2em;
 	width: 580px;
 }
-#add-comment-form TEXTAREA
+.dataform TEXTAREA
 {
 	overflow: auto;
 }
-#add-comment-form FIELDSET
+.dataform FIELDSET
 {
 	padding: 0 10px;
 }
-#add-comment-form P
+.dataform P
 {
 	padding: 15px 0 5px;
 	float: left;
@@ -348,7 +356,7 @@ A SPAN.user-info-name
 	color: #9BB3C9;
 	clear: both;
 }
-#add-comment-form BUTTON
+.dataform BUTTON
 {
 	margin-top: 15px;
 	text-align: center;
@@ -422,4 +430,8 @@ LABEL.error
 .watermark-on
 {
 	color: #8E9399;
+}
+.highlight
+{
+	background-color: #FBFED6;
 }

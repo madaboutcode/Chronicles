@@ -14,5 +14,9 @@
     <div class="comment-text">
         <%= Html.AsciiToHtml(Model.Text) %>
     </div>
+    <% if (this.IsAdmin())
+    {%>
+        <a href="#delete-<%= Model.Id %>" class="deletebutton">Delete</a> 
+    <%} %>
 </div>
 

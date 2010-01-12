@@ -14,10 +14,7 @@ namespace Chronicles.Web.Utility
         {
             string valueAsString = value as string;
 
-            if(valueAsString == null)
-                throw new ArgumentNullException("value");
-
-            return urlValidationRegex.IsMatch(valueAsString);
+            return valueAsString == null || urlValidationRegex.IsMatch(valueAsString);
         }
     }
 }

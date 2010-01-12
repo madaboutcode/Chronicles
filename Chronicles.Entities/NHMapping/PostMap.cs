@@ -19,7 +19,7 @@ namespace Chronicles.Entities.NHMapping
             Map(x => x.ModifiedDate);
             Map(x => x.ScheduledDate);
             Map(x => x.Approved);
-            HasMany(x => x.Comments).KeyColumn("PostId").Inverse();
+            HasMany(x => x.Comments).Where(x=>x.Deleted==0).KeyColumn("PostId").Inverse();
             HasManyToMany(x => x.Tags)
                 .Cascade.All()
                 .LazyLoad()

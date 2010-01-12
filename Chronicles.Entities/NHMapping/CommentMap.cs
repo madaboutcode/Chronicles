@@ -16,6 +16,7 @@ namespace Chronicles.Entities.NHMapping
             Map(x => x.Date);
             Map(x => x.Text, "Comment");
             Map(x => x.Approved);
+            Map(x => x.Deleted);
             References(x => x.User,"UserId").Cascade.All().LazyLoad();
             References(x => x.Post,"PostId").Cascade.All().LazyLoad();
         }

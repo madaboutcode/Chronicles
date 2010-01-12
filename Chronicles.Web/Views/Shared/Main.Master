@@ -23,11 +23,22 @@
         
     </asp:ContentPlaceHolder>
   </div>
-  <div id="sidebar">sidebar</div>
+  <div id="sidebar">
+      <div class="section">
+    	    <h2>Recent Posts</h2>
+            <div class="section-content section-list">
+        	    <% Html.RenderAction(MVC.Widget.Actions.RecentPosts, MVC.Widget.Name); %>
+            </div>
+      </div>
+  </div>
   <div id="footer">footer</div>
 </div>
     <script language="javascript" type="text/javascript" src="<%= Links.scripts.jquery_1_3_2_js %>" ></script>
     <script language="javascript" type="text/javascript" src="<%= Links.scripts.chronicles_js %>" ></script>
+    <%if (this.IsAdmin())
+      {%>
+        <script language="javascript" type="text/javascript" src="<%= Links.scripts.admin_js %>" ></script>
+    <%} %>
     <asp:ContentPlaceHolder ID="ScriptContent" runat="server" />
 </body>
 </html>

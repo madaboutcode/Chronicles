@@ -14,9 +14,9 @@ namespace Chronicles.Web.Controllers
 {
     public partial class PostsController : BaseController
     {
-        PostServices postServices;
-        CommentServices commentService;
-        TagServices tagService;
+        private readonly PostServices postServices;
+        private readonly CommentServices commentService;
+        private readonly TagServices tagService;
 
         public PostsController(PostServices postServices,TagServices tagService ,CommentServices commentService,AppConfiguration config)
         {
@@ -73,7 +73,7 @@ namespace Chronicles.Web.Controllers
             return View(MVC.Posts.Views.ViewPost, details);
         }
 
-        [AcceptVerbs(HttpVerbs.Post)]
+        [HttpPost]
         public virtual ActionResult AddComment(CommentDetails commentDetails)
         {
             if (ModelState.IsValid)
@@ -95,6 +95,20 @@ namespace Chronicles.Web.Controllers
             comment.User = user;
 
             return comment;
+        }
+
+        [HttpPost, Authorize]
+        public virtual ActionResult DeleteComment(int commentId)
+        {
+            commentService.DeleteComment(commentId);
+            return Json(new {Success = true});
+        }
+
+        [HttpPost, Authorize]
+        public virtual ActionResult UndeleteComment(int commentId)
+        {
+            commentService.UndeleteComment(commentId);
+            return Json(new { Success = true });
         }
     }
 }

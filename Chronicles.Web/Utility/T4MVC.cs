@@ -20,9 +20,10 @@ using T4MVC;
 
 [CompilerGenerated]
 public static class MVC {
-    public static Chronicles.Web.Controllers.CommentController Comment = new Chronicles.Web.Controllers.T4MVC_CommentController();
     public static Chronicles.Web.Controllers.HomeController Home = new Chronicles.Web.Controllers.T4MVC_HomeController();
     public static Chronicles.Web.Controllers.PostsController Posts = new Chronicles.Web.Controllers.T4MVC_PostsController();
+    public static Chronicles.Web.Controllers.UserController User = new Chronicles.Web.Controllers.T4MVC_UserController();
+    public static Chronicles.Web.Controllers.WidgetController Widget = new Chronicles.Web.Controllers.T4MVC_WidgetController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -57,15 +58,6 @@ namespace System.Web.Mvc {
             return htmlHelper.BeginForm(callInfo.Action, callInfo.Controller, callInfo.RouteValues, formMethod, htmlAttributes);
         }
 
-        public static void RenderAction(this HtmlHelper htmlHelper, ActionResult result) {
-            var callInfo = (IT4MVCActionResult)result;
-            htmlHelper.RenderAction(callInfo.Action, callInfo.Controller, callInfo.RouteValues);
-        }
-
-        public static MvcHtmlString Action(this HtmlHelper htmlHelper, ActionResult result) {
-            var callInfo = (IT4MVCActionResult)result;
-            return htmlHelper.Action(callInfo.Action, callInfo.Controller, callInfo.RouteValues);
-        }
         public static string Action(this UrlHelper urlHelper, ActionResult result) {
             return urlHelper.RouteUrl(result.GetRouteValueDictionary());
         }
@@ -109,7 +101,7 @@ namespace System.Web.Mvc {
             result.Controller = controller;
             result.Action = action;
             result.RouteValues = new RouteValueDictionary();
-            result.RouteValues.Add("Area", area ?? "");
+            //result.RouteValues.Add("Area", area ?? "");
             result.RouteValues.Add("Controller", controller);
             result.RouteValues.Add("Action", action);
         }
@@ -150,6 +142,7 @@ namespace Links {
         private const string URLPATH = "~/scripts";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        public static readonly string admin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/admin.min.js") ? Url("admin.min.js") : Url("admin.js");
         public static readonly string chronicles_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/chronicles.min.js") ? Url("chronicles.min.js") : Url("chronicles.js");
         public static readonly string jquery_1_3_2_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.3.2-vsdoc.min.js") ? Url("jquery-1.3.2-vsdoc.min.js") : Url("jquery-1.3.2-vsdoc.js");
         public static readonly string jquery_1_3_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.3.2.min.js") ? Url("jquery-1.3.2.min.js") : Url("jquery-1.3.2.js");
@@ -187,6 +180,7 @@ namespace Links {
         public static readonly string logo_jpg = Url("logo.jpg");
         public static readonly string quote_jpg = Url("quote.jpg");
         public static readonly string rss_jpg = Url("rss.jpg");
+        public static readonly string spacer_gif = Url("spacer.gif");
         public static readonly string tag_png = Url("tag.png");
     }
 

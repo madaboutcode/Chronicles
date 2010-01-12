@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5F897F84-318D-4617-85A7-DF74CBE4D725}</ProjectGuid>
     <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -35,6 +35,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_Dependencies\automapper\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Dependencies\nhibernate3alpha\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
     <Reference Include="CookComputing.XmlRpcV2, Version=2.4.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_Dependencies\xmlrpc_net\CookComputing.XmlRpcV2.dll</HintPath>
@@ -46,6 +50,10 @@
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_Dependencies\nhibernate3alpha\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=3.0.0.1001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Dependencies\nhibernate3alpha\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
     <Reference Include="RouteDebug, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -65,6 +73,10 @@
     </Reference>
     <Reference Include="System.Data.DataSetExtensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.61.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Dependencies\elmah\System.Data.SQLite.DLL</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=2.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -86,7 +98,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WidgetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -99,16 +112,15 @@
     </Compile>
     <Compile Include="Utility\Bootstrapper.cs" />
     <Compile Include="Utility\ChroniclesHandleErrorAttribute.cs" />
-    <Compile Include="Utility\CommentController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Utility\DIControllerFactory.cs" />
     <Compile Include="Utility\ExceptionPolicyManager.cs" />
+    <Compile Include="Utility\FormsAuthenticationService.cs" />
     <Compile Include="Utility\GravatarProvider.cs" />
     <Compile Include="Utility\HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Utility\HtmlHelperExtensions.cs" />
+    <Compile Include="Utility\IAuthenticationService.cs" />
     <Compile Include="Utility\PostsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -122,10 +134,18 @@
     </Compile>
     <Compile Include="Utility\UrlAttribute.cs" />
     <Compile Include="Utility\UrlHelpers.cs" />
+    <Compile Include="Utility\UserController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ViewHelpers.cs" />
+    <Compile Include="Utility\WidgetController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\CommentDetails.cs" />
     <Compile Include="ViewModels\PostDetails.cs" />
     <Compile Include="ViewModels\PostsByTag.cs" />
     <Compile Include="ViewModels\PostSummary.cs" />
+    <Compile Include="ViewModels\PostTeaser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -165,67 +185,28 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Antlr3.Runtime.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="content\xml\quicklinks.xml">
     </Content>
-    <Content Include="bin\Castle.Core.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Castle.DynamicProxy2.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Chronicles.DataAccess.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Chronicles.DataAccess.pdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Chronicles.Entities.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Chronicles.Entities.pdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Chronicles.Framework.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Chronicles.Framework.pdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Chronicles.Services.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Chronicles.Services.pdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\FluentNHibernate.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Iesi.Collections.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\log4net.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\NHibernate.ByteCode.Castle.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\NHibernate.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Remotion.Data.Linq.dll" />
-    <Content Include="bin\Remotion.dll" />
-    <Content Include="bin\Remotion.Interfaces.dll" />
-    <Content Include="content\xml\quicklinks.xml" />
     <Content Include="css\master.css" />
-    <Content Include="img\blogtitle_bg.jpg" />
-    <Content Include="img\dot.png" />
-    <Content Include="img\dotline.png" />
-    <Content Include="img\form-ico.gif" />
-    <Content Include="img\logo.jpg" />
-    <Content Include="img\quote.jpg" />
-    <Content Include="img\rss.jpg" />
-    <Content Include="img\tag.png" />
+    <Content Include="img\blogtitle_bg.jpg">
+    </Content>
+    <Content Include="img\dot.png">
+    </Content>
+    <Content Include="img\dotline.png">
+    </Content>
+    <Content Include="img\form-ico.gif">
+    </Content>
+    <Content Include="img\logo.jpg">
+    </Content>
+    <Content Include="img\quote.jpg">
+    </Content>
+    <Content Include="img\rss.jpg">
+    </Content>
+    <Content Include="img\spacer.gif">
+    </Content>
+    <Content Include="img\tag.png">
+    </Content>
+    <Content Include="scripts\admin.js" />
     <Content Include="scripts\chronicles.js" />
     <Content Include="Views\Posts\ViewPost.aspx" />
     <Content Include="Views\Posts\ViewPostsByTag.aspx" />
@@ -233,13 +214,19 @@
     <Content Include="Views\Shared\DisplayTemplates\CommentDetails.ascx" />
     <Content Include="Views\Shared\DisplayTemplates\PostDetails.ascx" />
     <Content Include="Views\Shared\DisplayTemplates\PostSummary.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\PostTeaser.ascx" />
     <Content Include="Views\Shared\DisplayTemplates\Tag.ascx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\Main.Master" />
     <Content Include="Views\Shared\PartialViews\QuickLinksPartial.ascx" />
-    <Content Include="xslt\quicklinks.xslt" />
+    <Content Include="Views\User\Login.aspx" />
+    <Content Include="Views\Widget\RecentPosts.aspx" />
+    <Content Include="xslt\quicklinks.xslt">
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="errorlog\errors.s3db">
+    </None>
     <None Include="Utility\T4MVC.settings.t4" />
     <None Include="Utility\T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -269,9 +256,6 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

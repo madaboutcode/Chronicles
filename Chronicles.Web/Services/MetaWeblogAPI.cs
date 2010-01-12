@@ -46,9 +46,7 @@ namespace Chronicles.Web.Services
 
         private void AuthenticateUser(string username, string password)
         {
-            string authenticationToken;
-
-            if (!userServices.AuthenticateUser(username, password, out authenticationToken))
+            if (!userServices.AuthenticateUser(username, password))
             {
                 throw new AuthenticationException("Username or password is incorrect");
             }
@@ -138,7 +136,7 @@ namespace Chronicles.Web.Services
             XmlRpcStruct rpcstruct = new XmlRpcStruct();
             rpcstruct.Add("blogid", "123"); // Blog Id
             rpcstruct.Add("blogName", "madaboutcode"); // Blog Name
-            rpcstruct.Add("url", "http://192.168.1.105/blog/home/index"); // Blog URL
+            rpcstruct.Add("url", "http://madaboutcode.com/"); // Blog URL
             XmlRpcStruct[] datarpcstruct = new XmlRpcStruct[] { rpcstruct };
             return datarpcstruct;
         }

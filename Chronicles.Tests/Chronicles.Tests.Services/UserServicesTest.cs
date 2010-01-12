@@ -182,24 +182,5 @@ namespace Chronicles.Tests.Services
 
         #endregion GetNewOrExistingUser Tests
 
-        /// <summary>
-        ///A test for AuthenticateUser
-        ///</summary>
-        [TestMethod()]
-        [Ignore]
-        public void AuthenticateUserTest()
-        {
-            UserServices target = new UserServices(); // TODO: Initialize to an appropriate value
-            string userName = string.Empty; // TODO: Initialize to an appropriate value
-            string password = string.Empty; // TODO: Initialize to an appropriate value
-            string authenticationToken = string.Empty; // TODO: Initialize to an appropriate value
-            string authenticationTokenExpected = string.Empty; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.AuthenticateUser(userName, password, out authenticationToken);
-            Assert.AreEqual(authenticationTokenExpected, authenticationToken);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
-        }
     }
 }

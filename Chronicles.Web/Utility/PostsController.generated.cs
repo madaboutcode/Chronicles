@@ -39,6 +39,14 @@ namespace Chronicles.Web.Controllers {
         public System.Web.Mvc.ActionResult AddComment() {
             return new T4MVC_ActionResult(Area, Name, Actions.AddComment);
         }
+        [NonAction]
+        public System.Web.Mvc.ActionResult DeleteComment() {
+            return new T4MVC_ActionResult(Area, Name, Actions.DeleteComment);
+        }
+        [NonAction]
+        public System.Web.Mvc.ActionResult UndeleteComment() {
+            return new T4MVC_ActionResult(Area, Name, Actions.UndeleteComment);
+        }
 
         public readonly string Area = "";
         public readonly string Name = "Posts";
@@ -49,6 +57,8 @@ namespace Chronicles.Web.Controllers {
             public readonly string ViewPost = "ViewPost";
             public readonly string ViewPostsByTag = "ViewPostsByTag";
             public readonly string AddComment = "AddComment";
+            public readonly string DeleteComment = "DeleteComment";
+            public readonly string UndeleteComment = "UndeleteComment";
         }
 
 
@@ -84,6 +94,18 @@ namespace Chronicles.Web.Controllers {
         public override System.Web.Mvc.ActionResult AddComment(Chronicles.Web.ViewModels.CommentDetails commentDetails) {
             var callInfo = new T4MVC_ActionResult(Area, Name, Actions.AddComment);
             callInfo.RouteValues.Add("commentDetails", commentDetails);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult DeleteComment(int commentId) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, Actions.DeleteComment);
+            callInfo.RouteValues.Add("commentId", commentId);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult UndeleteComment(int commentId) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, Actions.UndeleteComment);
+            callInfo.RouteValues.Add("commentId", commentId);
             return callInfo;
         }
 

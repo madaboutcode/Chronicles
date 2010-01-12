@@ -37,5 +37,34 @@ namespace Chronicles.DataAccess
             }
             return comment;
         }
+
+        public Comment GetComment(int commentId)
+        {
+            var comment = (from c in DbContext.Comments
+                          where c.Id == commentId && c.Deleted == 0
+                          select c).FirstOrDefault();
+
+            return comment;
+        }
+
+        public void DeleteComment(Comment comment)
+        {
+            using (ITransaction transaction = Session.BeginTransaction())
+            {
+                comment.Deleted = 1;
+                Session.Update(comment);
+                transaction.Commit();
+            }
+        }
+
+        public void UndeleteComment(Comment comment)
+        {
+            using (ITransaction transaction = Session.BeginTransaction())
+            {
+                comment.Deleted = 0;
+                Session.Update(comment);
+                transaction.Commit();
+            }
+        }
     }
 }
