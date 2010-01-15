@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Chronicles.Web.ViewModels.CommentDetails>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<CommentDetails>" %>
 <div class="comment-box" id="comment-<%=Model.Id %>">
     <img src="<%= Html.Gravatar(Model.UserEmail) %>" />
     

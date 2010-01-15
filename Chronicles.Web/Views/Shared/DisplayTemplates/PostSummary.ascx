@@ -5,8 +5,8 @@
     string postLink = Url.Action(MVC.Posts.ViewPost(pubDate.Year, pubDate.Month, pubDate.Day, Model.Id, Html.GetTextForUrl(Model.Title))); 
 %>
 <div class="entry">
-    <span class="entry-date"><%= Model.PublishedDate.ToString("yyyy-MMM-dd") %></span> 
     <h1><a href="<%=postLink%>" title="Go to post : <%= Model.Title%>"><%= Model.Title %></a></h1>
+    <span class="entry-date">Posted on <%= Model.PublishedDate.ToString("MMMM dd, yyyy hh:mm tt") %></span> 
     <div class="entry-body">
         <%= Model.Summary %>
         <ul class="post-tags">
@@ -15,7 +15,18 @@
         <div class="comment-count">
         <%if (Model.CommentCount > 0)
           {  %>
-        	<a href="<%= postLink + "#comments"%>"><%=Model.CommentCount%> comments</a>
+        	<a href="<%= postLink + "#comments"%>"><%=Model.CommentCount%> 
+        	
+        	<%if (Model.CommentCount > 1)
+           {%>
+        	    comments
+        	<%}
+           else
+            {
+            %>
+                comment      	    
+        	<%}%>    
+        	</a>
         <%}
           else
           { %>

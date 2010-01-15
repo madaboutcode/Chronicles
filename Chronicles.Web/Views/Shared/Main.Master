@@ -1,43 +1,64 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <asp:ContentPlaceHolder ID="MetaContent" runat="server" />
-    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
     <link href="~/css/master.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="container">
-  <div id="header">
-  	<form id="searchbox" method="get">
-    	<input type="text" name="query" class="transparent watermark-on" value="search" title="Search Box"/>
-    </form>
-  	<div id="subscribe">
-    	<a href="#" title="Subscribe to my blog"><img src="<%= Links.img.rss_jpg %>" alt="Subscribe to my blog" /></a>
-    </div>
-    <% Html.RenderPartial(MVC.Shared.Views.PartialViews.QuickLinksPartial); %>
-  </div>
-  <div id="content">
-    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        
-    </asp:ContentPlaceHolder>
-  </div>
-  <div id="sidebar">
-      <div class="section">
-    	    <h2>Recent Posts</h2>
-            <div class="section-content section-list">
-        	    <% Html.RenderAction(MVC.Widget.Actions.RecentPosts, MVC.Widget.Name); %>
+    <div id="container">
+        <div id="header">
+            <a id="logo-overlay" href="<%=Request.ApplicationPath.TrimEnd('/')+"/" %>">&nbsp;</a>
+            <form id="searchbox" method="get">
+            <input type="text" name="query" class="transparent watermark-on" value="search" title="Search Box" />
+            </form>
+            <div id="subscribe">
+                <a href="#" title="Subscribe to my blog">
+                    <img src="<%= Links.img.rss_jpg %>" alt="Subscribe to my blog" /></a>
             </div>
+            <% Html.RenderPartial(MVC.Shared.Views.PartialViews.QuickLinksPartial); %>
+        </div>
+        <div id="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="sidebar">
+            <div class="section">
+                <h2>
+                    Recent Posts</h2>
+                <div class="section-content section-list">
+                    <% Html.RenderAction(MVC.Widget.Actions.RecentPosts, MVC.Widget.Name); %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+       <div class="hline"></div>
+       <div class="section footer-admin">
+       <h2>Admin</h2>
+      <ul>
+        <li><a href="/user/login">Login</a></li>
+      </ul>
       </div>
-  </div>
-  <div id="footer">footer</div>
-</div>
-    <script language="javascript" type="text/javascript" src="<%= Links.scripts.jquery_1_3_2_js %>" ></script>
-    <script language="javascript" type="text/javascript" src="<%= Links.scripts.chronicles_js %>" ></script>
+      <div id="footer-infopanel">
+        Powered by <a href="http://github.com/madaboutcode/Chronicles">Chronicles</a> blog engine
+      </div>
+    </div>
+
+    <script language="javascript" type="text/javascript" src="<%= Links.scripts.jquery_1_3_2_js %>"></script>
+
+    <script language="javascript" type="text/javascript" src="<%= Links.scripts.chronicles_js %>"></script>
+
     <%if (this.IsAdmin())
       {%>
-        <script language="javascript" type="text/javascript" src="<%= Links.scripts.admin_js %>" ></script>
+
+    <script language="javascript" type="text/javascript" src="<%= Links.scripts.admin_js %>"></script>
+
     <%} %>
     <asp:ContentPlaceHolder ID="ScriptContent" runat="server" />
 </body>

@@ -27,12 +27,14 @@ namespace Chronicles.DataAccess
             if (count <= 0)
                 throw new ArgumentOutOfRangeException("count", "count must be > 0");
 
-            var result = (from post in DbContext.Posts
-                          where post.ScheduledDate <= DateTime.Now && post.Approved == true
-                          orderby post.ScheduledDate descending 
-                          select new { Post = post, CommentCount = post.Comments.Count() }).Take(count);
+            var query = from post in DbContext.Posts
+                        where post.ScheduledDate <= DateTime.Now && post.Approved == true
+                        orderby post.ScheduledDate descending
+                        select new { Post = post, CommentCount = post.Comments.Count() };
 
-            List<Post> posts = new List<Post>(result.Count());
+            List<Post> posts = new List<Post>(count);
+
+            var result = query.Take(count);
 
             foreach (var row in result)
             {
@@ -60,7 +62,7 @@ namespace Chronicles.DataAccess
         public Post GetPostById(int id)
         {
             return (from post in DbContext.Posts
-                    where post.Id == id 
+                    where post.Id == id
                     select post).FirstOrDefault<Post>();
         }
 
@@ -68,7 +70,7 @@ namespace Chronicles.DataAccess
         {
             var posts = from tag in DbContext.Tags
                         from post in DbContext.Posts
-                        where (tag.TagName == name || tag.NormalizedTagName == name) 
+                        where (tag.TagName == name || tag.NormalizedTagName == name)
                             && post.Tags.Contains(tag)
                         orderby post.ScheduledDate descending
                         select new { Post = post, CommentCount = post.Comments.Count() };

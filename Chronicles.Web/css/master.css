@@ -22,11 +22,6 @@ OL, UL
 {
 	list-style: none;
 }
-/*debug*/
-#footer
-{
-	background-color: #0F0;
-}
 /*total width: 965;
 positioning*/
 #container
@@ -44,6 +39,7 @@ positioning*/
 {
 	width: 640px;
 	float: left;
+	min-height: 800px;
 }
 #sidebar
 {
@@ -52,9 +48,10 @@ positioning*/
 }
 #footer
 {
-	width: 965px;
-	float: left;
+	width: 100%;
 	clear: both;
+	float: left;
+	background: #000000;
 }
 #searchbox
 {
@@ -113,6 +110,19 @@ positioning*/
 	left: 325px;
 	text-decoration: none;
 }
+#footer-infopanel
+{
+	width: 100%;
+	float: left;
+	clear: both;
+	text-align: center;
+	color: #FEFEFE;
+	font-weight: bold;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	word-spacing: 0.2em;
+}
 .section-content
 {
 	padding: 10px 0 0 5px;
@@ -153,7 +163,7 @@ DIV.entry
 }
 .entry H1
 {
-	font: normal 2.1em Georgia, "Times New Roman", Times, serif;
+	font: normal 2em Georgia, "Times New Roman", Times, serif;
 	color: #3C7B9D;
 }
 .entry A:hover H1
@@ -183,6 +193,7 @@ DIV.entry
 {
 	line-height: 1.5em;
 	text-align: justify;
+	clear: both;
 }
 .entry-body H2
 {
@@ -205,6 +216,9 @@ DIV.entry
 .entry-date
 {
 	float: right;
+	font: 0.85em "courier new", courier, "Andale Mono", monospace;
+	color: #8893A9;
+	clear: both;
 }
 UL.post-tags
 {
@@ -383,6 +397,15 @@ A SPAN.user-info-name
 	font: bold 0.7em verdana, "Lucida Grande", sans-serif;
 	height: 20px;
 	padding-top: 5px;
+}
+.footer-admin
+{
+	float: right;
+	width: 33%;
+}
+#footer-infopanel A
+{
+	color: #FEFEFE;
 }
 /*classes*/
 .transparent
