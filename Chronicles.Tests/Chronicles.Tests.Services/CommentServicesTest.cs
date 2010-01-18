@@ -106,7 +106,7 @@ namespace Chronicles.Tests.Services
 
         private void SetupUserServiceMocks()
         {
-            userServicesMock.Setup(x => x.GetNewOrExistingUser(user)).Returns(user);
+            userServicesMock.Setup(x => x.GetNewOrExistingVisitor(user)).Returns(user);
         }
 
         private void SetupAppConfigMocks()
@@ -196,7 +196,7 @@ namespace Chronicles.Tests.Services
 
             //Assert
             commentRepositoryMock.Verify(x => x.AddComment(comment), Times.Once());
-            userServicesMock.Verify(x=>x.GetNewOrExistingUser(user), Times.Once());
+            userServicesMock.Verify(x=>x.GetNewOrExistingVisitor(user), Times.Once());
         }
 
         [TestMethod]

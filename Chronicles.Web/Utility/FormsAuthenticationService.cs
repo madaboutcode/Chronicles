@@ -1,3 +1,4 @@
+using System;
 using System.Web.Security;
 using Chronicles.Services;
 
@@ -13,7 +14,18 @@ namespace Chronicles.Web.Utility
         }
         public bool LogIn(string userName, string password, bool persist)
         {
-            if(userServices.AuthenticateUser(userName, password))
+            bool isAuthenticated = false;
+
+            try
+            {
+                isAuthenticated = userServices.AuthenticateUser(userName, password);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                isAuthenticated = false;
+            }
+            
+            if(isAuthenticated)
             {
                 FormsAuthentication.SetAuthCookie(userName, persist);
                 return true;

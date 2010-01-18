@@ -13,7 +13,7 @@ namespace Chronicles.Web.Utility
                 || control.Page.User.Identity.IsAuthenticated == false)
                 return false;
 
-            return string.Compare(control.Page.User.Identity.Name, "username", true) == 0;
+            return string.Compare(control.Page.User.Identity.Name,"ajeesh") == 0;
         }
     }
 }

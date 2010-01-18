@@ -47,6 +47,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_Dependencies\elmah\Elmah.dll</HintPath>
     </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0774796e73ebf640, processorArchitecture=MSIL" />
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_Dependencies\nhibernate3alpha\log4net.dll</HintPath>
@@ -102,6 +103,13 @@
     <Compile Include="Controllers\WidgetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,6 +196,7 @@
     <Content Include="content\xml\quicklinks.xml">
     </Content>
     <Content Include="css\master.css" />
+    <Content Include="Default.aspx" />
     <Content Include="img\blogtitle_bg.jpg">
     </Content>
     <Content Include="img\dot.png">
@@ -196,6 +205,7 @@
     </Content>
     <Content Include="img\form-ico.gif">
     </Content>
+    <Content Include="img\logo-text-alone.jpg" />
     <Content Include="img\logo.jpg">
     </Content>
     <Content Include="img\quote.jpg">
@@ -208,6 +218,7 @@
     </Content>
     <Content Include="scripts\admin.js" />
     <Content Include="scripts\chronicles.js" />
+    <Content Include="Views\Posts\RssFeed.aspx" />
     <Content Include="Views\Posts\ViewPost.aspx" />
     <Content Include="Views\Posts\ViewPostsByTag.aspx" />
     <Content Include="Views\Home\Index.aspx" />

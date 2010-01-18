@@ -98,8 +98,16 @@ namespace Chronicles.Tests.Services
             {
                 Id = 10,
                 Name = "testuser",
-                Email = "existinguser@chronicles.com"
+                Email = "existinguser@chronicles.com",
             };
+        }
+
+        private User CreateNewSystemUser()
+        {
+            User user = CreateNewUser();
+            user.Salt = "zlstFnfBp0qGQ/L5xwtjuMfykoWGxJ+pYYu/Lqz9liE41SUNUzZE+g8GQkJSx7sUw2Zw";
+            user.Hash = "Nyzp/MFIKxkBxCHiZGvwftV6e9Vqx+LlHZ9JVzbWbG4=";
+            return user;
         }
 
         private void SetupUserRepository(Mock<IUserRepository> repositoryMock)
@@ -112,7 +120,7 @@ namespace Chronicles.Tests.Services
         #endregion Test helpers , mocks
 
 
-        #region GetNewOrExistingUser Tests
+        #region GetNewOrExistingVisitor Tests
 
         [TestMethod]
         public void GetNewOrExistingUser_when_user_exists_it_should_return_the_existing_user()
@@ -122,7 +130,7 @@ namespace Chronicles.Tests.Services
 
             //Act
 
-            User ret = service.GetNewOrExistingUser(user);
+            User ret = service.GetNewOrExistingVisitor(user);
 
             //Assert
             Assert.AreEqual(existingUser.Id, ret.Id);
@@ -136,7 +144,7 @@ namespace Chronicles.Tests.Services
             User user = new User();
 
             //Act
-            service.GetNewOrExistingUser(user);
+            service.GetNewOrExistingVisitor(user);
 
             //Assert
         }
@@ -155,7 +163,7 @@ namespace Chronicles.Tests.Services
             };
 
             //Act
-            User ret = service.GetNewOrExistingUser(user);
+            User ret = service.GetNewOrExistingVisitor(user);
 
             //Assert
             Assert.AreEqual("newuser", ret.Name);
@@ -173,14 +181,35 @@ namespace Chronicles.Tests.Services
             user.Name = "Name changed";
 
             //Act
-            User ret = service.GetNewOrExistingUser(user);
+            User ret = service.GetNewOrExistingVisitor(user);
 
             //Assert
             Assert.AreEqual(existingUser.Id,ret.Id);
             Assert.AreEqual(user.Name, ret.Name);
         }
 
-        #endregion GetNewOrExistingUser Tests
+        #endregion GetNewOrExistingVisitor Tests
 
+
+        #region AuthenticateUser Test
+
+        [TestMethod]
+        public void AuthenticateUser_Test()
+        {
+            //Arrange
+            User user = CreateNewSystemUser();
+            user.Role = UserRole.Admin;
+            userRepositoryMock.Setup(x => x.GetUserByName("ajeesh"))
+                .Returns(user);
+
+            //Act
+            bool ret = service.AuthenticateUser("ajeesh", "password");
+
+            //Assert
+            userRepositoryMock.VerifyAll();
+            Assert.IsTrue(ret);
+        }
+
+        #endregion AuthenticateUser Test
     }
 }

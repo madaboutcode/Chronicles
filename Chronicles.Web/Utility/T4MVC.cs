@@ -177,6 +177,7 @@ namespace Links {
         public static readonly string dot_png = Url("dot.png");
         public static readonly string dotline_png = Url("dotline.png");
         public static readonly string form_ico_gif = Url("form-ico.gif");
+        public static readonly string logo_text_alone_jpg = Url("logo-text-alone.jpg");
         public static readonly string logo_jpg = Url("logo.jpg");
         public static readonly string quote_jpg = Url("quote.jpg");
         public static readonly string rss_jpg = Url("rss.jpg");

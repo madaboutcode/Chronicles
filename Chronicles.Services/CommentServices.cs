@@ -64,7 +64,7 @@ namespace Chronicles.Services
             comment.Approved = false;
             comment.Deleted = 0;
 
-            comment.User = userServices.GetNewOrExistingUser(comment.User);
+            comment.User = userServices.GetNewOrExistingVisitor(comment.User);
         }
 
         public void DeleteComment(int commentId)

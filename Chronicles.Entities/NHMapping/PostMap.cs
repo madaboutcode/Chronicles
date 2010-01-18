@@ -21,10 +21,10 @@ namespace Chronicles.Entities.NHMapping
             Map(x => x.Approved);
             HasMany(x => x.Comments).Where(x=>x.Deleted==0).KeyColumn("PostId").Inverse();
             HasManyToMany(x => x.Tags)
-                .Cascade.All()
                 .Table("PostsTags")
                 .ParentKeyColumn("PostId")
-                .ChildKeyColumn("TagId");
+                .ChildKeyColumn("TagId")
+                .Not.LazyLoad();
         }
     }
 }

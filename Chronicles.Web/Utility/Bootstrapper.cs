@@ -48,8 +48,11 @@ namespace Chronicles.Web.Utility
 
     public class ChroniclesRegistry : Registry
     {
-        protected override void configure()
+        public ChroniclesRegistry()
         {
+            ForRequestedType<IDataSessionFactoryProvider>()
+                .TheDefaultIsConcreteType<DataSessionFactoryProvider>()
+                .CacheBy(InstanceScope.Singleton);
             ForRequestedType<IPostRepository>().TheDefaultIsConcreteType<PostRepository>().CacheBy(InstanceScope.Hybrid);
             ForRequestedType<ITagRepository>().TheDefaultIsConcreteType<TagRepository>().CacheBy(InstanceScope.Hybrid);
             ForRequestedType<IAppConfigProvider>().TheDefaultIsConcreteType<AppConfigProvider>().CacheBy(InstanceScope.Singleton);

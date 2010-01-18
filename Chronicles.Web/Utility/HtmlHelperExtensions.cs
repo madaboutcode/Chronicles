@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Text.RegularExpressions;
 using System.Text;
+using System.Web.Routing;
 using Chronicles.Framework;
 using System.Xml.Xsl;
 using System.IO;
@@ -100,6 +98,14 @@ namespace Chronicles.Web.Utility
             xsl.Transform(dataFilePath, null, sw);
 
             return sw.ToString();
+        }
+
+        public static string GetUrl(this HtmlHelper html, ActionResult actionResult)
+        {
+            if (actionResult == null) throw new ArgumentNullException("actionResult");
+            RouteValueDictionary routeValueDictionary = actionResult.GetRouteValueDictionary();
+            return UrlHelper.GenerateUrl(null, null, null, routeValueDictionary, html.RouteCollection,
+                                  html.ViewContext.RequestContext, false);
         }
     }
 }

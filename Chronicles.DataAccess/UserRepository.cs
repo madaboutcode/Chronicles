@@ -25,6 +25,11 @@ namespace Chronicles.DataAccess
                    select user).FirstOrDefault();
         }
 
-
+        public User GetUserByName(string name)
+        {
+            return (from user in DbContext.Users
+                    where user.Name == name
+                    select user).FirstOrDefault();
+        }
     }
 }

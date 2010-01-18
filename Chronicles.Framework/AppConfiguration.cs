@@ -33,5 +33,12 @@ namespace Chronicles.Framework
 				return configProvider.GetConfig("ConnectionString");
 			}
 		}
+		public string RssPostCount
+		{
+			get
+			{
+				return configProvider.GetConfig("RssPostCount");
+			}
+		}
 	}
 }

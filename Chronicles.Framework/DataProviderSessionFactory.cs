@@ -11,13 +11,11 @@ namespace Chronicles.Framework
 {
     public class DataProviderSessionFactory
     {
-        const string EntityAssembly = "Chronicles.Entities";
+        private IDataSessionFactoryProvider sessionFactoryProvider;
 
-        AppConfiguration config;
-
-        public DataProviderSessionFactory(AppConfiguration config)
+        public DataProviderSessionFactory(IDataSessionFactoryProvider sessionFactoryProvider)
         {
-            this.config = config;
+            this.sessionFactoryProvider = sessionFactoryProvider;
         }
 
         private ISession session;
@@ -31,14 +29,8 @@ namespace Chronicles.Framework
 
         private ISession CreateSession()
         {
-            Assembly entityAssembly = Assembly.Load(EntityAssembly);
-
-            return Fluently.Configure()
-                .Database(MsSqlConfiguration.MsSql2005.ConnectionString(config.ConnectionString))
-                .Mappings(m => m.FluentMappings
-                                .AddFromAssembly(entityAssembly)
-                 )
-                .BuildSessionFactory()
+            return sessionFactoryProvider
+                .GetSessionFactory()
                 .OpenSession();
         }
     }

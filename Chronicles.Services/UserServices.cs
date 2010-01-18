@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using Chronicles.DataAccess.Facade;
 using Chronicles.Entities;
@@ -26,15 +28,26 @@ namespace Chronicles.Services
 
         public virtual bool AuthenticateUser(string userName, string password)
         {
-            if (string.Compare(userName, "username", true) == 0 &&
-                password == "P4$5w0rd")
-            {
-                return true;
-            }
-            return false;
+            if (string.IsNullOrEmpty(userName)) throw new ArgumentNullException("userName");
+            if (string.IsNullOrEmpty(password)) throw new ArgumentNullException("password");
+
+            User user = GetUser(userName);
+
+            if(user == null)
+                throw new UnauthorizedAccessException("No user with the given name was found");
+
+            if(user.Role != UserRole.Admin && user.Role != UserRole.Reviewer)
+                throw new UnauthorizedAccessException("User is doesn't have permission");
+
+            string passHash = HashPassword(password, user.Salt);
+
+            if(string.Compare(user.Hash, passHash, false) != 0)
+                throw new UnauthorizedAccessException("Password is incorrect");
+
+            return true;
         }
 
-        public virtual User GetNewOrExistingUser(User user)
+        public virtual User GetNewOrExistingVisitor(User user)
         {
             if (user == null) throw new ArgumentNullException("user");
 
@@ -61,6 +74,19 @@ namespace Chronicles.Services
 
                 return existingUser;
             }
+        }
+
+        public virtual User GetUser(string userName)
+        {
+            return userRepository.GetUserByName(userName);
+        }
+
+        protected virtual string HashPassword(string password, string salt)
+        {
+            string saltedPasswd = password + salt;
+
+            SHA256 sha = SHA256.Create();
+            return Convert.ToBase64String(sha.ComputeHash(Encoding.ASCII.GetBytes(saltedPasswd)));
         }
     }
 }

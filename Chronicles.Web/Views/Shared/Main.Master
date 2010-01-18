@@ -18,7 +18,7 @@
             <input type="text" name="query" class="transparent watermark-on" value="search" title="Search Box" />
             </form>
             <div id="subscribe">
-                <a href="#" title="Subscribe to my blog">
+                <a href="<%= Html.GetUrl(MVC.Posts.RssFeed()) %>" title="Subscribe to my blog">
                     <img src="<%= Links.img.rss_jpg %>" alt="Subscribe to my blog" /></a>
             </div>
             <% Html.RenderPartial(MVC.Shared.Views.PartialViews.QuickLinksPartial); %>

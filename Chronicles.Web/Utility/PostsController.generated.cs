@@ -59,12 +59,14 @@ namespace Chronicles.Web.Controllers {
             public readonly string AddComment = "AddComment";
             public readonly string DeleteComment = "DeleteComment";
             public readonly string UndeleteComment = "UndeleteComment";
+            public readonly string RssFeed = "RssFeed";
         }
 
 
         static readonly ViewNames s_views = new ViewNames();
         public ViewNames Views { get { return s_views; } }
         public class ViewNames {
+            public readonly string RssFeed = "~/Views/Posts/RssFeed.aspx";
             public readonly string ViewPost = "~/Views/Posts/ViewPost.aspx";
             public readonly string ViewPostsByTag = "~/Views/Posts/ViewPostsByTag.aspx";
         }
@@ -106,6 +108,11 @@ namespace Chronicles.Web.Controllers {
         public override System.Web.Mvc.ActionResult UndeleteComment(int commentId) {
             var callInfo = new T4MVC_ActionResult(Area, Name, Actions.UndeleteComment);
             callInfo.RouteValues.Add("commentId", commentId);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult RssFeed() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, Actions.RssFeed);
             return callInfo;
         }
 

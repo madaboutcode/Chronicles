@@ -35,6 +35,12 @@ namespace Chronicles.Web
                 , new { pagenumber = @"\d+" }
             );
 
+            //  /subscribe
+            routes.MapRoute(
+                "subscribe"
+                , "subscribe"
+                , new {controller = MVC.Posts.Name, action = MVC.Posts.Actions.RssFeed});
+
             routes.MapRoute(
                 "Default",                                              // Route name
                 "{controller}/{action}",                           // URL with parameters
@@ -66,6 +72,8 @@ namespace Chronicles.Web
             Bootstrapper.Boot();
 
             RegisterControllerFactory();
+
+            HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize();
         }
 
         protected void Application_Error()

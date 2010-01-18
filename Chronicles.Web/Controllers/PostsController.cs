@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Chronicles.Services;
 using Chronicles.Entities;
@@ -17,12 +15,14 @@ namespace Chronicles.Web.Controllers
         private readonly PostServices postServices;
         private readonly CommentServices commentService;
         private readonly TagServices tagService;
+        private readonly AppConfiguration config;
 
         public PostsController(PostServices postServices,TagServices tagService ,CommentServices commentService,AppConfiguration config)
         {
             this.postServices = postServices;
             this.commentService = commentService;
             this.tagService = tagService;
+            this.config = config;
         }
 
         public virtual ActionResult ViewPost(int year, int month, int day, int id, string title)
@@ -73,7 +73,7 @@ namespace Chronicles.Web.Controllers
             return View(MVC.Posts.Views.ViewPost, details);
         }
 
-        [HttpPost]
+        [HttpPost,ValidateInput(false)]
         public virtual ActionResult AddComment(CommentDetails commentDetails)
         {
             if (ModelState.IsValid)
@@ -109,6 +109,15 @@ namespace Chronicles.Web.Controllers
         {
             commentService.UndeleteComment(commentId);
             return Json(new { Success = true });
+        }
+
+        public virtual ActionResult RssFeed()
+        {
+            IList<Post> posts = postServices.GetLatestPosts(Convert.ToInt32(config.RssPostCount));
+
+            PostSummary[] postList = Mapper.Map<IList<Post>, PostSummary[]>(posts);
+
+            return View(postList);
         }
     }
 }
