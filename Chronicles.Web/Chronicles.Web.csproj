@@ -47,7 +47,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_Dependencies\elmah\Elmah.dll</HintPath>
     </Reference>
-    <Reference Include="HibernatingRhinos.Profiler.Appender, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0774796e73ebf640, processorArchitecture=MSIL" />
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_Dependencies\nhibernate3alpha\log4net.dll</HintPath>
@@ -129,6 +128,7 @@
     </Compile>
     <Compile Include="Utility\HtmlHelperExtensions.cs" />
     <Compile Include="Utility\IAuthenticationService.cs" />
+    <Compile Include="Utility\OutputCacheAttribute.cs" />
     <Compile Include="Utility\PostsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>

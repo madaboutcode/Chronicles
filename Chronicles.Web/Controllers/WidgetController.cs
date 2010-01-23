@@ -4,10 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
+using System.Web.UI;
 using AutoMapper;
 using Chronicles.Entities;
 using Chronicles.Framework;
 using Chronicles.Services;
+using Chronicles.Web.Utility;
 using Chronicles.Web.ViewModels;
 using log4net;
 
@@ -24,6 +26,8 @@ namespace Chronicles.Web.Controllers
             this.postService = postService;
             this.config = config;
         }
+
+        [ChroniclesOutputCache(Compress = false)]
         public virtual ActionResult RecentPosts()
         {
             var posts = postService.GetLatestPosts(Convert.ToInt32(config.RecentPostsBlockCount));

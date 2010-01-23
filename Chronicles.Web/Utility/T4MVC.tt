@@ -1,4 +1,4 @@
-﻿<#
+<#
 /*
 T4MVC Version 2.6.03
 Find latest version and documentation at http://aspnet.codeplex.com/wikipage?title=T4MVC
@@ -417,7 +417,7 @@ Project GetProjectContainingT4File(DTE dte) {
         // Mark the .tt file as unsaved. This way it will be saved and update itself next time the
         // project is built. Basically, it keeps marking itself as unsaved to make the next build work.
         // Note: this is certainly hacky, but is the best I could come up with so far.
-        projectItem.Document.Saved = false;
+        //projectItem.Document.Saved = false;
     }
     
     return projectItem.ContainingProject;

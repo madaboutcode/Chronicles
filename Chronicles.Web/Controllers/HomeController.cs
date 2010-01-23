@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Web.UI;
 using Chronicles.Services;
+using Chronicles.Web.Utility;
 using Chronicles.Web.ViewModels;
 using Chronicles.Entities;
 using AutoMapper;
 using Chronicles.Framework;
 using log4net;
-using Chronicles.Web.Utility;
 
 namespace Chronicles.Web.Controllers
 {
@@ -23,7 +21,7 @@ namespace Chronicles.Web.Controllers
         }
         //
         // GET: /Home/
-
+        [ChroniclesOutputCache]
         public virtual ActionResult Index()
         {
             IList<Post> latestPosts = postService.GetLatestPosts();

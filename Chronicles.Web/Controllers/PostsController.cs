@@ -25,6 +25,7 @@ namespace Chronicles.Web.Controllers
             this.config = config;
         }
 
+        [ChroniclesOutputCache]
         public virtual ActionResult ViewPost(int year, int month, int day, int id, string title)
         {
             Post p = postServices.GetPostById(id);
@@ -37,7 +38,7 @@ namespace Chronicles.Web.Controllers
             return View(details);
         }
 
-
+        [ChroniclesOutputCache]
         public virtual ActionResult ViewPostsByTag(string tagname, int pageNumber)
         {
             int totalPages = 0;
@@ -111,6 +112,7 @@ namespace Chronicles.Web.Controllers
             return Json(new { Success = true });
         }
 
+        [ChroniclesOutputCache]
         public virtual ActionResult RssFeed()
         {
             IList<Post> posts = postServices.GetLatestPosts(Convert.ToInt32(config.RssPostCount));

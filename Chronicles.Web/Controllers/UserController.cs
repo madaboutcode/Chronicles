@@ -23,6 +23,7 @@ namespace Chronicles.Web.Controllers
             this.userServices = userServices;
         }
 
+        [ChroniclesOutputCache]
         public virtual ActionResult Login()
         {
             return View();

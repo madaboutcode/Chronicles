@@ -47,6 +47,8 @@ namespace Chronicles.Web
                 new { controller = "Home", action = "Index" }  // Parameter defaults,
                 , new { controller = @"[a-zA-Z]*", action = @"[a-zA-Z]*" }
             );
+
+            routes.MapRoute("Catchall","",new {controller = "Home", action = "Index"});
         }
 
         public void RegisterModelBinders(ModelBinderDictionary binders) // Add this whole method
@@ -72,8 +74,6 @@ namespace Chronicles.Web
             Bootstrapper.Boot();
 
             RegisterControllerFactory();
-
-            HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize();
         }
 
         protected void Application_Error()
