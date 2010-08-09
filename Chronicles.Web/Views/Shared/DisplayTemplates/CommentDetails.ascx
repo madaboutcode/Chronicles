@@ -4,7 +4,7 @@
     
     <%if (!string.IsNullOrEmpty(Model.UserWebSite))
       { %>
-        <a href="<%= Model.UserWebSite %>"><span class="user-info-name"><%=Html.Encode(Model.UserName)%></span></a> 
+        <a href="<%= Model.UserWebSite %>" rel="nofollow"><span class="user-info-name"><%=Html.Encode(Model.UserName)%></span></a> 
     <%}
       else
       { %>

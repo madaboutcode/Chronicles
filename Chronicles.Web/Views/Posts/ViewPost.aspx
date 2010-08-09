@@ -38,6 +38,7 @@
 
 <%using (Html.BeginForm(MVC.Posts.AddComment(), FormMethod.Post, new { @class = "section dataform", id = "add-comment-form" }))
   { %>
+    <%= Html.AntiForgeryToken() %>
 <h2>
     Add Comment</h2>
 <fieldset class="comment-personal-info">
@@ -59,7 +60,7 @@
     <textarea name="Text" cols="60" rows="10" id="comment-text" class="required"><%=text %></textarea>
 </fieldset>
 <fieldset class="comment-submitbutton">
-    <button name="postcomment" type="submit" class="button">
+    <button name="postcomment" type="submit" class="button" id="submit_button">
         Post</button>
 </fieldset>
 <% } %>
@@ -79,10 +80,16 @@
                 errorPlacement: function(error, element) {
                     error.addClass('validation-message');
                     $(element).after(error);
-                    
-                    var pos = '-' + ($(element).height()+30)+'px';
+
+                    var pos = '-' + ($(element).height() + 30) + 'px';
                     error.css({ top: pos });
                 }
+            });
+            window.formStartTime = new Date();
+            $('form').submit(function() {
+                $('<input type="hidden" name="t" />')
+                    .val(((new Date()).getTime() - window.formStartTime.getTime()))
+                    .appendTo(this);
             });
         });
     </script>

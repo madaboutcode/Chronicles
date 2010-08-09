@@ -8,7 +8,7 @@ using Chronicles.Web.Utility;
 
 namespace Chronicles.Web.Controllers
 {
-    [ChroniclesHandleError]
+    [ElmahHandleError]
     public abstract partial class BaseController : Controller
     {
         ILog logger;

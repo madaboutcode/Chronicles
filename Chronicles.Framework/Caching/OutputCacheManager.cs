@@ -135,13 +135,20 @@ namespace Chronicles.Framework.Caching
                 httpWriterInUse.Write(Encoding.UTF8.GetString(result));
             else
             {
-                context.HttpContext.Response.BinaryWrite(result);
+                HttpResponseBase response = context.HttpContext.Response;
+                response.ContentType = "text/html";
+                response.Charset = Encoding.UTF8.WebName;
+                response.BinaryWrite(result);
             }
         }
 
         private void SendPageToClient(ref ActionExecutingContext filterContext, CachedPage cachedPage)
         {
             byte[] result = PreparePage(cachedPage, filterContext.HttpContext);
+
+            HttpResponseBase response = filterContext.HttpContext.Response;
+            response.ContentType = "text/html";
+            response.Charset = Encoding.UTF8.WebName;
 
             if (cachedPage.IsCompressed == false)
                 filterContext.Result = new ContentResult { Content = Encoding.UTF8.GetString(result) };
@@ -168,13 +175,12 @@ namespace Chronicles.Framework.Caching
                 {
                     acceptEncoding = acceptEncoding.ToUpperInvariant();
 
-                    if (acceptEncoding.Contains("GZIP"))
+                    if (acceptEncoding.IndexOf("GZIP", StringComparison.InvariantCultureIgnoreCase) > -1)
                     {
                         response.AppendHeader("Content-encoding", "gzip");
                         compressionSupported = true;
                     }
                 }
-
                 if(!compressionSupported)
                 {
                     return Decompress(result);

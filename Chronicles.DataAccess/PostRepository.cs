@@ -94,5 +94,18 @@ namespace Chronicles.DataAccess
             return postsForDisplay;
         }
 
+        public Post UpdatePost(Post postToUpdate)
+        {
+            if (postToUpdate == null)
+                throw new ArgumentNullException("postToUpdate");
+
+            using (ITransaction transaction = Session.BeginTransaction())
+            {
+                Session.SaveOrUpdate(postToUpdate);
+                transaction.Commit();
+            }
+
+            return postToUpdate;
+        }
     }
 }

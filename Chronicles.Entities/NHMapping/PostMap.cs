@@ -24,6 +24,7 @@ namespace Chronicles.Entities.NHMapping
                 .Table("PostsTags")
                 .ParentKeyColumn("PostId")
                 .ChildKeyColumn("TagId")
+                .Cascade.All()
                 .Not.LazyLoad();
         }
     }

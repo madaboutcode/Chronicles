@@ -1,7 +1,7 @@
 ﻿function GetUrl(relUrl)
 {
     if(typeof(baseUrl) == 'undefined')
-        baseUrl = '/';
+        baseUrl = '/blog/';
     
     return baseUrl + relUrl;
 }

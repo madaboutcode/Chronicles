@@ -9,7 +9,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MetaContent" runat="server">
-    
+    <meta name="robots" content="noarchive,all" />
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ScriptContent" runat="server">

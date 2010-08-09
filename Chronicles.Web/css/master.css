@@ -208,10 +208,22 @@ DIV.entry
 {
 	margin: 10px 0 15px;
 }
-.entry-body PRE CODE
+.entry-body PRE, .entry-body CODE
 {
-	font: 1em Consolas, Monaco, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+	font-size: 0.75em;
 	/*[empty]background-color:;*/
+}
+.entry-body IMG
+{
+	margin: 10px;
+}
+.entry-body B, .entry-body STRONG
+{
+	font-weight: bold;
+}
+.entry-body EM
+{
+	font-style: italic;
 }
 .entry-date
 {

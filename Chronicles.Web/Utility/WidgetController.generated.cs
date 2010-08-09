@@ -35,12 +35,14 @@ namespace Chronicles.Web.Controllers {
         public ActionNames Actions { get { return s_actions; } }
         public class ActionNames {
             public readonly string RecentPosts = "RecentPosts";
+            public readonly string PerfTracker = "PerfTracker";
         }
 
 
         static readonly ViewNames s_views = new ViewNames();
         public ViewNames Views { get { return s_views; } }
         public class ViewNames {
+            public readonly string PerfTracker = "~/Views/Widget/PerfTracker.ascx";
             public readonly string RecentPosts = "~/Views/Widget/RecentPosts.aspx";
         }
     }
@@ -51,6 +53,11 @@ namespace Chronicles.Web.Controllers {
 
         public override System.Web.Mvc.ActionResult RecentPosts() {
             var callInfo = new T4MVC_ActionResult(Area, Name, Actions.RecentPosts);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult PerfTracker() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, Actions.PerfTracker);
             return callInfo;
         }
 

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5F897F84-318D-4617-85A7-DF74CBE4D725}</ProjectGuid>
     <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -54,6 +54,10 @@
     <Reference Include="NHibernate.ByteCode.Castle, Version=3.0.0.1001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_Dependencies\nhibernate3alpha\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="PerformanceAnalytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Dependencies\performanceanalytics\PerformanceAnalytics.dll</HintPath>
     </Reference>
     <Reference Include="RouteDebug, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -118,7 +122,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Utility\Bootstrapper.cs" />
-    <Compile Include="Utility\ChroniclesHandleErrorAttribute.cs" />
+    <Compile Include="Utility\ElmahHandleErrorAttribute.cs" />
     <Compile Include="Utility\DIControllerFactory.cs" />
     <Compile Include="Utility\ExceptionPolicyManager.cs" />
     <Compile Include="Utility\FormsAuthenticationService.cs" />
@@ -218,6 +222,51 @@
     </Content>
     <Content Include="scripts\admin.js" />
     <Content Include="scripts\chronicles.js" />
+    <Content Include="syntaxhighlighter\scripts\shAutoloader.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushAS3.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushBash.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushCpp.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushCSharp.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushCss.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushDelphi.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushDiff.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushErlang.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushGroovy.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushJava.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushJScript.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushPerl.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushPhp.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushPlain.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushPython.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushRuby.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushSass.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushScala.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushSql.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushVb.js" />
+    <Content Include="syntaxhighlighter\scripts\shBrushXml.js" />
+    <Content Include="syntaxhighlighter\scripts\shCore.js" />
+    <Content Include="syntaxhighlighter\scripts\shLegacy.js" />
+    <Content Include="syntaxhighlighter\styles\shCore.css" />
+    <Content Include="syntaxhighlighter\styles\shCoreDefault.css" />
+    <Content Include="syntaxhighlighter\styles\shCoreDjango.css" />
+    <Content Include="syntaxhighlighter\styles\shCoreEclipse.css" />
+    <Content Include="syntaxhighlighter\styles\shCoreEmacs.css" />
+    <Content Include="syntaxhighlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="syntaxhighlighter\styles\shCoreMDUltra.css" />
+    <Content Include="syntaxhighlighter\styles\shCoreMidnight.css" />
+    <Content Include="syntaxhighlighter\styles\shCoreRDark.css" />
+    <Content Include="syntaxhighlighter\styles\shThemeDefault.css" />
+    <Content Include="syntaxhighlighter\styles\shThemeDjango.css" />
+    <Content Include="syntaxhighlighter\styles\shThemeEclipse.css" />
+    <Content Include="syntaxhighlighter\styles\shThemeEmacs.css" />
+    <Content Include="syntaxhighlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="syntaxhighlighter\styles\shThemeMDUltra.css" />
+    <Content Include="syntaxhighlighter\styles\shThemeMidnight.css" />
+    <Content Include="syntaxhighlighter\styles\shThemeRDark.css" />
     <Content Include="Views\Posts\RssFeed.aspx" />
     <Content Include="Views\Posts\ViewPost.aspx" />
     <Content Include="Views\Posts\ViewPostsByTag.aspx" />
@@ -231,6 +280,7 @@
     <Content Include="Views\Shared\Main.Master" />
     <Content Include="Views\Shared\PartialViews\QuickLinksPartial.ascx" />
     <Content Include="Views\User\Login.aspx" />
+    <Content Include="Views\Widget\PerfTracker.ascx" />
     <Content Include="Views\Widget\RecentPosts.aspx" />
     <Content Include="xslt\quicklinks.xslt">
     </Content>
@@ -267,6 +317,9 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

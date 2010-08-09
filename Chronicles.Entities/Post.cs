@@ -19,15 +19,18 @@ namespace Chronicles.Entities
         public virtual int CommentCount { get; set; }
         public virtual IList<Comment> Comments { get; set; }
 
-        public Post()
-        {
-            Tags = new List<Tag>();
-        }
-
         public virtual void AddTag(Tag tag)
         {
-            Tags.Add(tag);
-            tag.Posts.Add(this);
+            if(Tags == null)
+                Tags = new List<Tag>();
+
+            Tag existingTag = (Tags.Where(t => t.TagName == tag.TagName)).FirstOrDefault();
+
+            if (existingTag == null)
+            {
+                Tags.Add(tag);
+                tag.Posts.Add(this);
+            }
         }
     }
 }

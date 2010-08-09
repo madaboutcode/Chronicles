@@ -79,6 +79,15 @@ namespace Chronicles.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+            	long t = 0;
+            	string timeTaken = Request.Form["t"];
+				
+            	if(timeTaken == null || Int64.TryParse(timeTaken, out t) == false || t < 10000)
+            	{
+					this.ModelState.AddModelError("validation", "Validation error");
+            		return ViewPost(commentDetails.PostId, commentDetails);
+            	}
+
                 Comment comment = GetComment(commentDetails);
 
                 commentService.AddComment(comment, commentDetails.PostId);

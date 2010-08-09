@@ -87,7 +87,7 @@ namespace Chronicles.Web.Services
             return x;
         }
 
-        private static Post StructToPost(XmlRpcStruct x, bool publish)
+        private static Post StructToPost(Post p, XmlRpcStruct x, bool publish)
         {
             /* 
              *    1. struct {  
@@ -99,13 +99,15 @@ namespace Chronicles.Web.Services
                    7.     bool publish;  
                    8. }  
              */
-            Post p = new Post
-                        {
-                            Approved = publish,
-                            Body = x["description"].ToString(),
-                            Title = x["title"].ToString(),
-                            Id = x.ContainsKey("postid") ? Convert.ToInt32(x["postid"]) : 0
-                        };
+            if (p == null)
+            {
+                p = new Post();
+                p.Id = x.ContainsKey("postid") ? Convert.ToInt32(x["postid"]) : 0;
+            }
+
+            p.Approved = publish;
+            p.Body = x["description"].ToString();
+            p.Title = x["title"].ToString();
 
             if (x.ContainsKey("categories"))
             {
@@ -197,21 +199,27 @@ namespace Chronicles.Web.Services
         {
             AuthenticateUser(username, password);
 
-            throw new NotImplementedException();
+            Post p = postServices.GetPostById(Convert.ToInt32(postid));
+            if(p == null)
+                throw new Exception("Post with Id "+ postid + " was not found");
+
+            p = StructToPost(p, rpcstruct, publish);
+
+            postServices.UpdatePost(p);
 
             return true;
         }
 
         [XmlRpcMethod("metaWeblog.newPost")]
-        public bool NewPost(string blogid, string username, string password, XmlRpcStruct rpcstruct, bool publish)
+        public int NewPost(string blogid, string username, string password, XmlRpcStruct rpcstruct, bool publish)
         {
             AuthenticateUser(username, password);
 
-            Post p = StructToPost(rpcstruct, publish);
+            Post p = StructToPost(null,rpcstruct, publish);
 
             postServices.AddPost(p);
 
-            return true;
+            return p.Id;
         }
 
         [XmlRpcMethod("metaWeblog.getPost")]

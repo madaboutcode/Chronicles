@@ -10,5 +10,6 @@ namespace Chronicles.DataAccess.Facade
         IList<Post> GetLatestPosts(int count);
         Post GetPostById(int id);
         IList<Post> GetPostsByTag(string name, int pageSize, int pagenumber, out int totalRows);
+        Post UpdatePost(Post postToUpdate);
     }
 }

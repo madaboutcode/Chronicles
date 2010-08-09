@@ -16,7 +16,7 @@ namespace Chronicles.Web.Utility
 {
     public class ChroniclesOutputCacheAttribute:ActionFilterAttribute
     {
-        private bool compress = true;
+        private bool compress = false; //turing off compression
 
         public bool Compress
         {

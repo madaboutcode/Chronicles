@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using Chronicles.DataAccess.Facade;
@@ -62,32 +63,50 @@ namespace Chronicles.Services
                 throw new ConstraintViolationException("Every post should have at least one tag attached to it");
 
             IList<Tag> tags = new List<Tag>(post.Tags);
-            StringDictionary addedTags = new StringDictionary();
 
             foreach (var tag in tags)
             {
                 if (string.IsNullOrEmpty(tag.TagName))
                     throw new ConstraintViolationException("Tags should not be empty");
 
-                tag.Id = 0;
-
-                if (tag.DateCreated < DateTime.Now)
-                    tag.DateCreated = DateTime.Now;
-
-                tag.NormalizedTagName = StringUtility.GetNormalizedText(tag.TagName, '_');
-
-                post.Tags.Remove(tag);
-
-                if (!addedTags.ContainsKey(tag.TagName))
+                //tag.Id = 0;
+                if (tag.Id == 0)
                 {
+                    if (tag.DateCreated < DateTime.Now)
+                        tag.DateCreated = DateTime.Now;
+
+                    tag.NormalizedTagName = StringUtility.GetNormalizedText(tag.TagName, '_');
+
+                    post.Tags.Remove(tag);
+
                     Tag tagFromRepo = tagRepository.GetTagByName(tag.TagName);
 
                     post.AddTag(tagFromRepo ?? tag);
-                    addedTags.Add(tag.TagName, tag.TagName);
                 }
             }
         } 
         #endregion
+
+        #region Edit Post
+
+        //TODO: Tests!
+        public Post UpdatePost(Post postToSave)
+        {
+            if (postToSave == null)
+                throw new ArgumentNullException("postToSave");
+
+            if(postToSave.Id == 0)
+                throw new DataException("A post to update should have a valid Id");
+
+            ProcessTagsInPost(postToSave);
+
+            postToSave.ModifiedDate = DateTime.Now;
+
+            postToSave = postRepository.AddPost(postToSave);
+            return postToSave;
+        }
+
+        #endregion Edit Post
 
         public Post GetPostById(int id)
         {

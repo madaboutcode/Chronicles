@@ -33,7 +33,8 @@ readonly string[] StaticFilesFolders = new string[] {
     "Scripts",
     "css",
     "img",
-    "xslt"
+    "xslt",
+    "syntaxhighlighter"
 };
 
 // If true, the template marks itself as unsaved as part of its execution.

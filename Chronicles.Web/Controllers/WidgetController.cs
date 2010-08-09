@@ -41,5 +41,10 @@ namespace Chronicles.Web.Controllers
             return View(postTeasers);
         }
 
+        public virtual ActionResult PerfTracker()
+        {
+            return View();
+        }
+
     }
 }

@@ -7,7 +7,7 @@ using Elmah;
 
 namespace Chronicles.Web.Utility
 {
-    public class ChroniclesHandleErrorAttribute : HandleErrorAttribute
+    public class ElmahHandleErrorAttribute : HandleErrorAttribute
     {
         public override void OnException(ExceptionContext context)
         {
